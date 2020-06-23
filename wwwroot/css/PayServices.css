@@ -1,0 +1,105 @@
+﻿body {
+    font-size: 13px;
+    line-height: 1.8;
+    color: black;
+    background: url('../images/body-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-weight: 400;
+    font-family: Varela Round, sans-serif !important;
+    margin: 0px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Varela Round, sans-serif !important;
+}
+.main {
+    padding: 60px 0;
+    position: relative;
+}
+.container {
+    width: 560px;
+    background: #fff;
+    margin-left: 165px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+}
+.title-PayServices{
+    text-align:center;
+    padding-top:15px;
+}
+.title-PayServices h4 {
+    text-align: center;
+    margin-top: 10px;
+}
+#signup-form {
+    padding: 30px 15px 70px 15px;
+}
+
+.form-control-input, .label-control {
+    padding-left:0px;
+    left: 0px;
+}
+input, select {
+    border: none !important;
+    border-bottom: 2px solid #ebebeb !important;
+    padding: 5px 0;
+    color: #222;
+
+}
+    input:focus, select:focus {
+        border-bottom: 2px solid #4966b1 !important;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+
+.floating-select select {
+    padding: 4px 4px;
+    padding-top: 1.25rem;
+    font-family: Varela Round, sans-serif !important;
+}
+
+.floating-select label {
+    position: absolute;
+    top: 0.8125rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.floating-select select:focus ~ label, .floating-select select:not([value=""]):valid ~ label {
+    top: 0.125rem;
+    font-size: 0.75rem;
+}
+
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+/* active state */
+.floating-select select:focus ~ {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+.cards-billing{
+    font-size:30px;
+}
