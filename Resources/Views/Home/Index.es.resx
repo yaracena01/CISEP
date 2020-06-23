@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Nosotros</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="As America’s most reliable translation service provider, CISEP Multi-Services has a long history of managing complex translation projects in multiple languages for corporations of all sizes." xml:space="preserve">
+    <value>Como el proveedor de servicios de traducción más confiable de Estados Unidos, CISEP Multi-Services tiene una larga historia de gestión de proyectos de traducción complejos en varios idiomas para corporaciones de todos los tamaños.</value>
+  </data>
+  <data name="Besides being an unique name for our corporation, it means COMPLETE, IMPACTING, SECURE, SUCCESSFUL AND PROFESSIONAL. When we looked for a name that represented the vision of our corporation, a brighter idea could not come to our minds. CISEP has created trainings, resources, study guides and more to empower the community and motivate them to get ahead and create a better future for our children and family members. CISEP is not just another corporation, it is the only corporation that invests in the financial and the intellectual well-being of its community." xml:space="preserve">
+    <value>Además de ser un nombre único para nuestra corporación, significa COMPLETO, IMPACTANTE, SEGURO, EXITOSO Y PROFESIONAL. Cuando buscamos un nombre que representara la visión de nuestra corporación, no se nos ocurrió una idea más brillante. CISEP ha creado capacitaciones, recursos, guías de estudio y más para empoderar a la comunidad y motivarlos a avanzar y crear un futuro mejor para nuestros hijos y miembros de la familia. CISEP no es solo otra corporación, es la única corporación que invierte en el bienestar financiero e intelectual de su comunidad.</value>
+  </data>
+  <data name="Book now" xml:space="preserve">
+    <value>Reservar ahora</value>
+  </data>
+  <data name="CISEP Multi-Services Help that your family, friends, employees, and property are safe.Our security systems start with a Digital Video Recorder (DVR) or Network Video Recorder (NVR) that include security grade hard drives that can store days, weeks, or even months of security footage. These security camera systems also feature remote access via the Internet, giving you peace of mind no matter where you are." xml:space="preserve">
+    <value>Los servicios múltiples de CISEP ayudan a que su familia, amigos, empleados y propiedades estén seguros. Nuestros sistemas de seguridad comienzan con una grabadora de video digital (DVR) o una grabadora de video en red (NVR) que incluye discos duros de grado de seguridad que pueden almacenar días, semanas, o incluso meses de imágenes de seguridad. Estos sistemas de cámaras de seguridad también cuentan con acceso remoto a través de Internet, lo que le brinda tranquilidad sin importar dónde se encuentre.</value>
+  </data>
+  <data name="CISEP Multi-Services is company has the tools and resources you need to incorporate data-driven marketing as a main component and influencer of your web design strategy." xml:space="preserve">
+    <value>CISEP Multi-Services es una compañía que tiene las herramientas y los recursos que necesita para incorporar el marketing basado en datos como un componente principal e influyente de su estrategia de diseño web.</value>
+  </data>
+  <data name="Click this box if you want to continue" xml:space="preserve">
+    <value>Cliquea esta casilla si desea continuar</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contacto</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Crédito</value>
+  </data>
+  <data name="Credit Repair" xml:space="preserve">
+    <value>Reparación de Crédito</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Ingles</value>
+  </data>
+  <data name="Follow us on Social Media" xml:space="preserve">
+    <value>Síguenos en las redes sociales</value>
+  </data>
+  <data name="Get In Touch Using The Form" xml:space="preserve">
+    <value>Póngase en contacto usando el formulario</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="I agree with CISEP-Multi-Services's stated" xml:space="preserve">
+    <value>Estoy de acuerdo con CISEP-Multi-Services declaró</value>
+  </data>
+  <data name="Immigration Forms Preparation and  Interpretation" xml:space="preserve">
+    <value>Preparación e interpretación de formularios de inmigración</value>
+  </data>
+  <data name="Income Tax" xml:space="preserve">
+    <value>Impuesto sobre la renta</value>
+  </data>
+  <data name="Language:" xml:space="preserve">
+    <value>Lenguaje</value>
+  </data>
+  <data name="More Information" xml:space="preserve">
+    <value>Más Información</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="Offering the services you need and providing resources and trainings." xml:space="preserve">
+    <value>Ofrecer los servicios que necesita y proporcionar recursos y capacitaciones.</value>
+  </data>
+  <data name="Our clients are our partners and we can not imagine a better future for our company without helping them reach their objectives" xml:space="preserve">
+    <value>Nuestros clientes son nuestros socios y no podemos imaginar un futuro mejor para nuestra empresa sin ayudarlos a alcanzar sus objetivos.</value>
+  </data>
+  <data name="Our purpose here at CISEP is to get you through those tough moments relying on our team's expertise in starting and growing companies." xml:space="preserve">
+    <value>Nuestro propósito aquí en CISEP es ayudarlo a atravesar esos momentos difíciles confiando en la experiencia de nuestro equipo para iniciar y hacer crecer empresas.</value>
+  </data>
+  <data name="Our service will help you remove any Inaccurate, Roneous, and Obsolete information on your Credit file, including:" xml:space="preserve">
+    <value>Nuestro servicio lo ayudará a eliminar cualquier información inexacta, falsa u obsoleta en su archivo de crédito, que incluye:</value>
+  </data>
+  <data name="Please Enter valid email" xml:space="preserve">
+    <value>Digite un correo válido</value>
+  </data>
+  <data name="Privacity Polity" xml:space="preserve">
+    <value>Política de privacidad</value>
+  </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Política de Privacidad</value>
+  </data>
+  <data name="Public Notary" xml:space="preserve">
+    <value>Notaria Pública</value>
+  </data>
+  <data name="Read Our Customer Testimonials" xml:space="preserve">
+    <value>Lea los testimonios de nuestros clientes</value>
+  </data>
+  <data name="RESOURCES" xml:space="preserve">
+    <value>Recursos</value>
+  </data>
+  <data name="Security Camara Installation" xml:space="preserve">
+    <value>Instalación de Cámara de Seguridad</value>
+  </data>
+  <data name="SELECT THE SERVICES YOU NEED" xml:space="preserve">
+    <value>SELECCIONA LOS SERVICIOS QUE NECESITAS</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Servicios</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Politicas de Privacidad</value>
+  </data>
+  <data name="SUBMIT MESSAGE" xml:space="preserve">
+    <value>ENVIAR MENSAJE</value>
+  </data>
+  <data name="Terms Conditions" xml:space="preserve">
+    <value>Terminos y Condiciones</value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>Testimonios</value>
+  </data>
+  <data name="This field is required" xml:space="preserve">
+    <value>Este campo es requerido</value>
+  </data>
+  <data name="Translation" xml:space="preserve">
+    <value>Traducción</value>
+  </data>
+  <data name="We are not lawyers or a law firm and we do not provide legal advice." xml:space="preserve">
+    <value>No somos abogados ni bufetes de abogados y no brindamos asesoramiento legal.</value>
+  </data>
+  <data name="We have a lot experiences in Tax preparer and Income Tax too. More ever we use legitimate taxes strategies to minimize taxes services process  focusing on maximizing refunds." xml:space="preserve">
+    <value>También tenemos muchas experiencias en preparación de impuestos e impuesto sobre la renta. Cada vez más utilizamos estrategias impositivas legítimas para minimizar el proceso de servicios impositivos centrados en maximizar los reembolsos.</value>
+  </data>
+  <data name="We have great customer services and professionalism accredited by the State of Texas. We can  assist you with Notary Public Services on documents such as:" xml:space="preserve">
+    <value>Tenemos excelentes servicios al cliente y profesionalismo acreditados por el Estado de Texas. Podemos ayudarlo con los Servicios Notariales Públicos en documentos tales como:</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>Sitios web</value>
+  </data>
+  <data name="WHY CISEP?" xml:space="preserve">
+    <value>¿POR QUE CISEP?</value>
+  </data>
+  <data name="You can stop by our office and just use the contact form below for any questions and inquiries" xml:space="preserve">
+    <value>Puede pasar por nuestra oficina y usar el formulario de contacto a continuación para cualquier pregunta o consulta.</value>
+  </data>
+  <data name="Your email has been sent successfully." xml:space="preserve">
+    <value>Su correo ha sido enviado satisfactoriamente.</value>
+  </data>
+  <data name="Your message" xml:space="preserve">
+    <value>Su mensaje</value>
+  </data>
+</root>
