@@ -18,6 +18,7 @@ legend {
 }
 .main {
     padding: 60px 0;
+    padding-bottom:0px;
     position: relative;
 }
 .container2 {
@@ -76,7 +77,7 @@ label {
     label.error {
         display: block;
         position: absolute;
-        top: 45px;
+        top: 45px !important;
         color: red;
         right: 0;
         text-align: right;
@@ -150,7 +151,7 @@ input.error, select.error {
 }
 
 .cards-billing{
-    font-size:30px;
+    font-size:25px;
 }
 
 
