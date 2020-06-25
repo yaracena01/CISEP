@@ -2,7 +2,6 @@
     font-size: 13px;
     line-height: 1.8;
     color: black;
-    background: url('../images/body-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -13,11 +12,15 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: Varela Round, sans-serif !important;
 }
+legend {
+    font-size: 18px !important;
+    color: #37A;
+}
 .main {
     padding: 60px 0;
     position: relative;
 }
-.container {
+.container2 {
     width: 560px;
     background: #fff;
     margin-left: 165px;
@@ -36,11 +39,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
 }
 #signup-form {
-    padding: 30px 15px 70px 15px;
+    padding: 50px 60px 70px 60px;
+    box-shadow: 24px 22px 35px -30px;
 }
 
 .form-control-input, .label-control {
-    padding-left:0px;
+    padding-left: 0px;
+    font-family: Varela Round, sans-serif !important;
     left: 0px;
 }
 input, select {
@@ -48,8 +53,46 @@ input, select {
     border-bottom: 2px solid #ebebeb !important;
     padding: 5px 0;
     color: #222;
-
 }
+list-type-ulli, ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    display: block;
+    width: 100%;
+    /*font-size: 14px;*/
+    /*font-weight: 400;*/
+    /*margin-bottom: 5px;*/
+}
+
+    label.required:before {
+        content: '*';
+        margin-left: 2px;
+        color: #b90000;
+    }
+    label.error {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+
+        label.error:after {
+            position: absolute;
+            right: 20px;
+            top: 40px;
+            font-size: 13px;
+            color: #ff1212;
+        }
+
+input.error, select.error {
+    border-bottom: 2px solid #ff1212 !important;
+}
+
+
     input:focus, select:focus {
         border-bottom: 2px solid #4966b1 !important;
     }
@@ -84,6 +127,10 @@ input, select {
     top: 0.125rem;
     font-size: 0.75rem;
 }
+.form-control-input:focus ~ label, .form-control-input:not([value=""]):valid ~ label {
+    top: 0.125rem;
+    font-size: 0.75rem;
+}
 
 
 *, *:before, *:after {
@@ -102,4 +149,64 @@ input, select {
 
 .cards-billing{
     font-size:30px;
+}
+
+display-flex, .form-row, ul, .title, .actions ul li a, .form-date-item .select-icon, .form-date-item .select-icon i, .form-date-group {
+    display: flex;
+    display: -webkit-flex;
+}
+a {
+    text-decoration: none;
+}
+
+.actions .disabled {
+    display: none;
+}
+.actions ul {
+    justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+}
+    .actions ul li {
+        margin-left: 10px;
+    }
+    .actions ul li a {
+        background: #37A;
+        width: 130px;
+        height: 50px;
+        color: #fff;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        justify-content: center;
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        -o-justify-content: center;
+        -ms-justify-content: center;
+        align-items: center;
+        -moz-align-items: center;
+        -webkit-align-items: center;
+        -o-align-items: center;
+        -ms-align-items: center;
+    }
+@media screen and (max-width: 480px) {
+    .signup-form {
+        padding: 50px 30px 70px 30px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container2 {
+        width: calc( 100% - 30px);
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container2 {
+        margin: 0 auto;
+    }
 }
