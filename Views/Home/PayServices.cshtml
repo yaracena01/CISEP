@@ -5,6 +5,10 @@
 @inject IViewLocalizer Localizer
 @inject IJsonHelper Json;
 
+@{ 
+    var root = "/imagePay/pay" + ViewBag.service.Photo;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +17,15 @@
     <meta name="author" content="colorlib.com">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form</title>
-
-    <link rel="stylesheet" href="~/fonts/themify-icons/themify-icons.css">
-    <link href="~/css/select2.min.css" rel="stylesheet" />
-    <link href="~/css/stylesPushServices.css" rel="stylesheet">
-
+    @*<link href="~/css/stepStyle.css" rel="stylesheet" />*@
+    <link href="~/css/PayServices.css" rel="stylesheet" />
+    @*<link href="~/css/select2.min.css" rel="stylesheet" />*@
+    <link href="~/css/fontValera.css" rel="stylesheet" />
 </head>
-<body>
+
+<body style="background: url('@root')">
     <div class="main">
-        <div class="container">
+        <div class="container2">
             <div class="title-PayServices">
                 <img class="img-fluid" src="~/images/logo3.0.png" width="125" />
                 <h4>@Localizer["Make Payment"]</h4>
@@ -36,75 +40,96 @@
                     </legend>
                     <div class="form-row">
                         <div class="col-lg-6">
-                            <label class=" required">@Localizer["First Name"]</label>
-                            <input name="First_name" type="text" class="form-control" id="First_name" required />
+                            <div class="form-group">
+                                <input name="First_name" type="text" class="form-control-input" id="First_name" required />
+                                <label class="label-control required" for="First_name">@Localizer["First Name"]</label>
+                            </div>
                         </div>
-
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Last Name"]</label>
-                            <input name="Last_name" type="text" class="form-control" id="Last_name" required />
+                            <div class="form-group">
+                                <input name="Last_name" type="text" class="form-control-input" id="Last_name" required />
+                                <label class="label-control required" for="Last_name">@Localizer["Last Name"]</label>
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Email"]</label>
-                            <input name="Email" type="email" class="form-control" id="Email" required />
+                            <div class="form-group">
+                                <input name="Email" type="email" class="form-control-input" id="Email" required />
+                                <label class="label-control" for="Email">@Localizer["Email"]</label>
+                            </div>
                         </div>
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Username"]</label>
-                            <input name="Username" type="text" class="form-control" id="Username" required />
+                            <div class="form-group">
+                                <input name="Username" type="text" class="form-control-input" id="Username" required />
+                                <label class="label-control" for="Username">@Localizer["Username"]</label>
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Password"]</label>
-                            <input name="Password" type="password" class="form-control" id="Password" required />
+                            <div class="form-group">
+                                <input name="Password" type="password" class="form-control-input" id="Password" required />
+                                <label class="label-control" for="Password">@Localizer["Password"]</label>
+                            </div>
                         </div>
                         <div class="col-lg-6">
-                            <label class="required" for="Confirm_password">@Localizer["Confirm Password"]</label>
-                            <input name="Confirm_password" type="password" class="form-control" id="Confirm_password" required />
+                            <div class="form-group">
+                                <input name="Confirm_password" type="password" class="form-control-input" id="Confirm_password" required />
+                                <label class="label-control" for="Confirm_password">@Localizer["Confirm Password"]</label>
+                            </div>
                         </div>
                     </div>
-                    <br />
+
                     <legend>
                         <span style="color:#37A">@Localizer["Current Address"]: </span>
                     </legend>
 
                     <div class="form-row">
-                        <div class="col-lg-6">
-                            <label class="required">@Localizer["Address"]</label>
-                            <input name="Address" type="text" class="form-control" id="Address" required />
-                        </div>
-                        <div class="col-lg-6">
-                            <label class="required">@Localizer["City"]</label>
-                            <input name="City" type="text" class="form-control" id="City" required />
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input name="Address" type="text" class="form-control-input" id="Address" required />
+                                <label class="label-control" for="Address">@Localizer["Address"]</label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Select Your State"]</label>
-                            <select name="State" id="State" class="form-control select2" required>
-                                <option value="" selected>@Localizer["Options"]</option>
-                                <option value="Sr">Sr</option>
-                                <option value="Jr">Jr</option>
-                                <option value="III">III</option>
-                                <option value="IV">IV</option>
-                            </select>
+                            <div class="form-group">
+                                <input name="City" type="text" class="form-control-input" id="City" required />
+                                <label class="label-control" for="City">@Localizer["City"]</label>
+                            </div>
                         </div>
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Zip"]</label>
-                            <input name="Zip" type="number" class="form-control" id="Zip" required />
+                            <div class="form-group floating-label floating-select">
+                                <select name="State" id="State" class="form-control-select select2" required>
+                                    <option value=""></option>
+                                    <option value="Sr">Sr</option>
+                                    <option value="Jr">Jr</option>
+                                    <option value="III">III</option>
+                                    <option value="IV">IV</option>
+                                </select>
+                                <label class="label-control" for="State">@Localizer["Select Your State"]</label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-6">
-                            <label class="required" for="Phone">@Localizer["Phone"]</label>
-                            <input name="Phone" type="number" class="form-control" id="Phone" required />
+                            <div class="form-group">
+                                <input name="Zip" type="number" class="form-control-input" id="Zip" required />
+                                <label class="label-control" for="Zip">@Localizer["Zip"]</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input name="Phone" type="number" class="form-control-input" id="Phone" required />
+                                <label class="label-control" for="Phone">@Localizer["Phone"]</label>
+                            </div>
                         </div>
                     </div>
-                    <br />
+
                     <div class="form-row">
                         <div class="col-lg-12">
                             <div class="form-check">
@@ -127,11 +152,13 @@
                     <p>@Localizer["Please enter the credit card you wish to use for billing"].</p>
 
                     <div class="form-row">
-                        <div class="col-lg-5">
-                            <label class="required">@Localizer["Credit Card Number (no spaces)"]</label>
-                            <input name="Card_number" type="number" class="form-control" id="Card_number" required />
+                        <div class="col-lg-8">
+                            <div class="form-group">
+                                <input name="CreditCardNumber" type="number" class="form-control-input" id="CreditCardNumber" required>
+                                <label class="label-control" for="CreditCardNumber">@Localizer["Credit Card Number (no spaces)"]</label>
+                            </div>
                         </div>
-                        <div class="col-lg-7 cards-billing">
+                        <div class="col-lg-4 cards-billing">
                             <span><i class="fab fa-cc-mastercard"></i></span>
                             <span><i class="fab fa-cc-visa"></i></span>
                             <span><i class="fab fa-cc-discover"></i></span>
@@ -139,50 +166,57 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-lg-5">
-                            <label class="required">@Localizer["Select Expiration Month"]</label>
-                            <select name="Month" id="Month" class="form-control">
-                                <option value="" selected>@Localizer["Options"]</option>
-                                <option value="January">@Localizer["January"]</option>
-                                <option value="February">@Localizer["February"]</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                                <option value="January">January</option>
-                                <option value="February">February</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                            </select>
+                        <div class="col-lg-6">
+                            <div class="form-group floating-label floating-select">
+                                <select name="Month" id="Month" class="form-control-select select2" required>
+                                    <option value=""></option>
+                                    <option value="January">@Localizer["January"]</option>
+                                    <option value="February">@Localizer["February"]</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                </select>
+                                <label class="label-control" for="Month">@Localizer["Select Expiration Month"]</label>
+                            </div>
                         </div>
-                        <div class="col-lg-5">
-                            <label class="required">@Localizer["Select Expiration Year"]</label>
-                            <select name="Year" id="Year" class="form-control">
-                                <option value="" selected>@Localizer["Options"]</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                                <option value="2026">2026</option>
-                                <option value="2027">2027</option>
-                                <option value="2028">2028</option>
-                                <option value="2029">2029</option>
-                                <option value="2030">2030</option>
-                                <option value="2031">2031</option>
-                                <option value="2032">2032</option>
-                                <option value="2033">2033</option>
-                                <option value="2034">2034</option>
-                                <option value="2035">2035</option>
-                                <option value="2036">2036</option>
-
-                            </select>
-                        </div>
-                        <div class="col-lg-2">
-                            <label class="required">CVC</label>
-                            <input name="Cvc" type="text" class="form-control" id="Cvc" required />
+                        <div class="col-lg-6">
+                            <div class="form-group floating-label floating-select">
+                                <select name="Year" id="Year" class="form-control-select select2" required>
+                                    <option value=""></option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2031">2031</option>
+                                    <option value="2032">2032</option>
+                                    <option value="2033">2033</option>
+                                    <option value="2034">2034</option>
+                                    <option value="2035">2035</option>
+                                    <option value="2036">2036</option>
+                                </select>
+                                <label class="label-control" for="Year">@Localizer["Select Expiration Year"]</label>
+                            </div>
                         </div>
                     </div>
-                    <br />
+                    <div class="form-row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <input name="Cvc" type="number" class="form-control-input" id="Cvc" required>
+                                <label class="label-control" for="CreditCardNumber">CVC</label>
+                            </div>
+                        </div>
+                    </div>
+
                     <legend>
                         <span class="step-heading">@Localizer["Identity Verification"]:</span>
                         <br />
@@ -191,12 +225,17 @@
 
                     <div class="form-row">
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Social Security Number"]</label>
-                            <input name="Social_security_number" type="password" class="form-control" id="Social_security_number" required />
+                            <div class="form-group">
+                                <input name="Social_security_number" type="password" class="form-control-input" id="Social_security_number" required />
+                                <label class="label-control" for="Social_security_number">@Localizer["Social Security Number"]</label>
+                            </div>
                         </div>
+
                         <div class="col-lg-6">
-                            <label class="required">@Localizer["Confirm SSN"]</label>
-                            <input name="Social_security_number_confirm" type="password" class="form-control" id="Social_security_number_confirm" required />
+                            <div class="form-group">
+                                <input name="Social_security_number_confirm" type="password" class="form-control-input" id="Social_security_number_confirm" required />
+                                <label class="label-control" for="Social_security_number_confirm">@Localizer["Confirm SSN"]</label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
@@ -228,7 +267,7 @@
                         </div>
                     </div>
                     @*<h5 style="padding-top: 15px;">@Localizer["Details"]</h5>
-                    <p>@Localizer["By activating your account, you will be able to access your IdentityIQ membership benefits online in seconds. You will be billed $1.00 now and then $24.99 per month for as long as you continue your membership, after your 7 day trial. If you are not satisfied, you can cancel at any time to discontinue your membership and there will be no additional charges. By clicking on the “Activate” button below, you agree to the offer details, to the Terms and Conditions, acknowledge receipt of our Privacy Policy and agree to its terms, and confirm your authorization for IdentityIQ to obtain your credit profile from any consumer reporting agency for your own use, to confirm your identity to avoid fraudulent transactions in your name, and to monitor your credit for changes"].</p>*@
+                        <p>@Localizer["By activating your account, you will be able to access your IdentityIQ membership benefits online in seconds. You will be billed $1.00 now and then $24.99 per month for as long as you continue your membership, after your 7 day trial. If you are not satisfied, you can cancel at any time to discontinue your membership and there will be no additional charges. By clicking on the “Activate” button below, you agree to the offer details, to the Terms and Conditions, acknowledge receipt of our Privacy Policy and agree to its terms, and confirm your authorization for IdentityIQ to obtain your credit profile from any consumer reporting agency for your own use, to confirm your identity to avoid fraudulent transactions in your name, and to monitor your credit for changes"].</p>*@
                 </fieldset>
 
             </form>
@@ -238,28 +277,13 @@
 
 
 
-    @section scripts {
-
-        <!-- JS -->
-        @*<script src="~/vendor/jquery/jquery.min.js"></script>*@
-        <script src="~/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-        <script src="~/vendor/jquery-validation/dist/additional-methods.min.js"></script>
-        <script src="~/vendor/jquery-steps/jquery.steps.min.js"></script>
-        <script src="~/vendor/minimalist-picker/dobpicker.js"></script>
-        <script src="~/js/mainPushServices.js"></script>
-
-        <script src="~/js/select2.min.js"></script>
-        @*<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-            <script>
-                $('.select2').select2({
-                    theme: "bootstrap"
-                });
-
-            </script>*@
+    @section scripts {     
+        <script src="~/js/vendor/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/js/vendor/jquery-validation/dist/additional-methods.js"></script>
+        <script src="~/js/vendor/jquery-steps/jquery.steps.js"></script>
+        <script src="~/js/PayServices.js"></script>
         <script>
-        $(document).ready(function () {
-            $('.select2').select2();
-        });
+
         </script>
     }
 
