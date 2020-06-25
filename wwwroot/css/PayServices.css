@@ -39,7 +39,7 @@ legend {
     margin-top: 10px;
 }
 #signup-form {
-    padding: 50px 60px 70px 60px;
+    padding: 15px 60px 70px 60px;
     box-shadow: 24px 22px 35px -30px;
 }
 
@@ -193,6 +193,12 @@ a {
         -o-align-items: center;
         -ms-align-items: center;
     }
+
+.header-title {
+    text-align: right;
+    margin-right: 15px;
+
+}
 @media screen and (max-width: 480px) {
     .signup-form {
         padding: 50px 30px 70px 30px;

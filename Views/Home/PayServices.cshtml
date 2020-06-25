@@ -17,7 +17,6 @@
     <meta name="author" content="colorlib.com">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form</title>
-    @*<link href="~/css/stepStyle.css" rel="stylesheet" />*@
     <link href="~/css/PayServices.css" rel="stylesheet" />
     @*<link href="~/css/select2.min.css" rel="stylesheet" />*@
     <link href="~/css/fontValera.css" rel="stylesheet" />
@@ -27,7 +26,9 @@
     <div class="main">
         <div class="container2">
             <div class="title-PayServices">
-                <img class="img-fluid" src="~/images/logo3.0.png" width="125" />
+                <img class="img-fluid" src="~/images/logo3.0.png" width="125" />             
+            </div>
+            <div class="header-title">
                 <h4>@Localizer["Make Payment"]</h4>
                 <h5>@ViewBag.service.Name</h5>
             </div>
@@ -57,13 +58,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Email" type="email" class="form-control-input" id="Email" required />
-                                <label class="label-control" for="Email">@Localizer["Email"]</label>
+                                <label class="label-control required" for="Email">@Localizer["Email"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Username" type="text" class="form-control-input" id="Username" required />
-                                <label class="label-control" for="Username">@Localizer["Username"]</label>
+                                <label class="label-control required" for="Username">@Localizer["Username"]</label>
                             </div>
                         </div>
                     </div>
@@ -72,13 +73,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Password" type="password" class="form-control-input" id="Password" required />
-                                <label class="label-control" for="Password">@Localizer["Password"]</label>
+                                <label class="label-control required" for="Password">@Localizer["Password"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Confirm_password" type="password" class="form-control-input" id="Confirm_password" required />
-                                <label class="label-control" for="Confirm_password">@Localizer["Confirm Password"]</label>
+                                <label class="label-control required" for="Confirm_password">@Localizer["Confirm Password"]</label>
                             </div>
                         </div>
                     </div>
@@ -91,7 +92,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <input name="Address" type="text" class="form-control-input" id="Address" required />
-                                <label class="label-control" for="Address">@Localizer["Address"]</label>
+                                <label class="label-control required" for="Address">@Localizer["Address"]</label>
                             </div>
                         </div>
                     </div>
@@ -99,7 +100,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="City" type="text" class="form-control-input" id="City" required />
-                                <label class="label-control" for="City">@Localizer["City"]</label>
+                                <label class="label-control required" for="City">@Localizer["City"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -111,7 +112,7 @@
                                     <option value="III">III</option>
                                     <option value="IV">IV</option>
                                 </select>
-                                <label class="label-control" for="State">@Localizer["Select Your State"]</label>
+                                <label class="label-control required" for="State">@Localizer["Select Your State"]</label>
                             </div>
                         </div>
                     </div>
@@ -119,13 +120,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Zip" type="number" class="form-control-input" id="Zip" required />
-                                <label class="label-control" for="Zip">@Localizer["Zip"]</label>
+                                <label class="label-control required" for="Zip">@Localizer["Zip"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Phone" type="number" class="form-control-input" id="Phone" required />
-                                <label class="label-control" for="Phone">@Localizer["Phone"]</label>
+                                <label class="label-control required" for="Phone">@Localizer["Phone"]</label>
                             </div>
                         </div>
                     </div>
@@ -155,7 +156,7 @@
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <input name="CreditCardNumber" type="number" class="form-control-input" id="CreditCardNumber" required>
-                                <label class="label-control" for="CreditCardNumber">@Localizer["Credit Card Number (no spaces)"]</label>
+                                <label class="label-control required" for="CreditCardNumber">@Localizer["Credit Card Number (no spaces)"]</label>
                             </div>
                         </div>
                         <div class="col-lg-4 cards-billing">
@@ -179,7 +180,7 @@
                                     <option value="March">March</option>
                                     <option value="April">April</option>
                                 </select>
-                                <label class="label-control" for="Month">@Localizer["Select Expiration Month"]</label>
+                                <label class="label-control required" for="Month">@Localizer["Select Expiration Month"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -204,7 +205,7 @@
                                     <option value="2035">2035</option>
                                     <option value="2036">2036</option>
                                 </select>
-                                <label class="label-control" for="Year">@Localizer["Select Expiration Year"]</label>
+                                <label class="label-control required" for="Year">@Localizer["Select Expiration Year"]</label>
                             </div>
                         </div>
                     </div>
@@ -212,7 +213,7 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <input name="Cvc" type="number" class="form-control-input" id="Cvc" required>
-                                <label class="label-control" for="CreditCardNumber">CVC</label>
+                                <label class="label-control required" for="CreditCardNumber">CVC</label>
                             </div>
                         </div>
                     </div>
@@ -227,14 +228,14 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Social_security_number" type="password" class="form-control-input" id="Social_security_number" required />
-                                <label class="label-control" for="Social_security_number">@Localizer["Social Security Number"]</label>
+                                <label class="label-control required" for="Social_security_number">@Localizer["Social Security Number"]</label>
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Social_security_number_confirm" type="password" class="form-control-input" id="Social_security_number_confirm" required />
-                                <label class="label-control" for="Social_security_number_confirm">@Localizer["Confirm SSN"]</label>
+                                <label class="label-control required" for="Social_security_number_confirm">@Localizer["Confirm SSN"]</label>
                             </div>
                         </div>
                     </div>
