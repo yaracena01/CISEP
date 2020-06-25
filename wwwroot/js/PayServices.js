@@ -4,54 +4,70 @@
     form.validate({
         errorPlacement: function errorPlacement(error, element) {
              element.before(error); 
+        },rules: {
+            Password: {
+                required: true,
+            },
+            Confirm_password: {
+                equalTo: "#Password"
+            },
+            Social_security_number: {
+                required: true,
+            },
+            Social_security_number_confirm: {
+                equalTo: "#Social_security_number"
+            }
         },
-        rules: {
-            First_name : {
-                required: true,
+        messages: {
+            First_name: {
+                required: "Enter your First Name"
             },
-            Last_name : {
-                required: true,
+            Last_name: {
+                required: "Enter your Last Name"
             },
-            user_name : {
-                required: true,
+            Email: {
+                required: "Enter your Email Address"
             },
-            password : {
-                required: true,
+            Username: {
+                required: "Enter your Username"
             },
-            email : {
-                required: true,
+            Password: {
+                required: "Enter your Password"
             },
-            phone : {
-                required: true,
+            Confirm_password: {
+                required: "Enter your Confirm Password",
+                equalTo: "Please enter the same password"
             },
-            address: {
-                required: true,
+            Address: {
+                required: "Enter your Street Address & Unit"
             },
-            employee_id : {
-                required: true,
+            City: {
+                required: "Enter your City"
             },
-            designation: {
-                required: true,
+            State: {
+                required: "Select your State"
             },
-            department: {
-                required: true,
+            Zip: {
+                required: "Enter your Zip Code"
             },
-            work_hours: {
-                required: true,
+            Phone: {
+                required: "Enter your Phone Number"
             },
-            bank_name: {
-                required: true,
+            Card_number: {
+                required: "Enter your Credit Card Number"
             },
-            holder_name: {
-                required: true,
+            Cvc: {
+                required: "Enter your Security Code"
             },
-            card_number: {
-                required: true,
-                number: true,
+
+            Social_security_number: {
+                required: "Enter your SSN"
             },
-            cvc: {
-                required: true,
-            },
+            Social_security_number_confirm: {
+                required: "Enter your Confirm SSN"
+            }
+
+
         },
         onfocusout: function(element) {
             $(element).valid();
