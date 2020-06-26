@@ -19,6 +19,7 @@
     <title>Sign Up Form</title>
     <link href="~/css/PayServices.css" rel="stylesheet" />
     @*<link href="~/css/select2.min.css" rel="stylesheet" />*@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css" rel="stylesheet" />
     <link href="~/css/fontValera.css" rel="stylesheet" />
 </head>
 
@@ -26,13 +27,13 @@
     <div class="main">
         <div class="container2">
             <div class="title-PayServices">
-                <img class="img-fluid" src="~/images/logo3.0.png" width="125" />             
+                <img class="img-fluid" src="~/images/logo3.0.png" width="125" />
             </div>
             <div class="header-title">
                 <h4>@Localizer["Make Payment"]</h4>
                 <h5>@ViewBag.service.Name</h5>
             </div>
-            <form method="POST" id="signup-form" class="signup-form">
+            <form method="POST" asp-action="AddClient" asp-controller="Home" id="signup-form" class="signup-form">
                 <h3>
                 </h3>
                 <fieldset>
@@ -107,10 +108,10 @@
                             <div class="form-group floating-label floating-select">
                                 <select name="State" id="State" class="form-control-select select2" required>
                                     <option value=""></option>
-                                    <option value="Sr">Sr</option>
-                                    <option value="Jr">Jr</option>
-                                    <option value="III">III</option>
-                                    <option value="IV">IV</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Francia">Francia</option>
+                                    <option value="Inglaterra">Inglaterra</option>
                                 </select>
                                 <label class="label-control required" for="State">@Localizer["Select Your State"]</label>
                             </div>
@@ -135,7 +136,7 @@
                         <div class="col-lg-12">
                             <div class="form-check">
                                 <label class="form-check-label" for="check2">
-                                    <input type="checkbox" class="form-check-input" id="check2" name="option2">@Localizer["Cell Phone - send me information alerts via text messaging or email, if available"].
+                                    <input type="checkbox" class="form-check-input" id="check2" name="notification">@Localizer["Cell Phone - send me information alerts via text messaging or email, if available"].
                                 </label>
                             </div>
                         </div>
@@ -279,13 +280,19 @@
 
 
 
-    @section scripts {     
+    @section scripts {
         <script src="~/js/vendor/jquery-validation/dist/jquery.validate.js"></script>
         <script src="~/js/vendor/jquery-validation/dist/additional-methods.js"></script>
         <script src="~/js/vendor/jquery-steps/jquery.steps.js"></script>
         <script src="~/js/PayServices.js"></script>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/i18n/af.min.js"></script>
         <script>
-
+          
+            $(document).ready(function () {
+                $('.select2').select2();
+              
+            });
         </script>
     }
 

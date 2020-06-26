@@ -113,16 +113,7 @@ namespace cisep.Models
                     .HasColumnName("last_name")
                     .HasMaxLength(50)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Suffix)
-                    .HasColumnName("suffix")
-                    .HasMaxLength(15)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Mi)                    
-                    .HasColumnName("mi")
-                    .HasMaxLength(1)
-                    .IsUnicode(false);
+               
 
                 entity.Property(e => e.Email)
                    .IsRequired()
@@ -171,6 +162,18 @@ namespace cisep.Models
                   .HasColumnName("phone")
                   .HasMaxLength(15)
                   .IsUnicode(false);
+
+                entity.Property(e => e.Social_security_number)
+                 .IsRequired()
+                 .HasColumnName("social_security_number")
+                 .HasMaxLength(15)
+                 .IsUnicode(false);
+
+                entity.Property(e => e.Notification)
+                .IsRequired()
+                .HasColumnName("notification")
+                .HasColumnType("bool")
+                .IsUnicode(false);
 
             });
 

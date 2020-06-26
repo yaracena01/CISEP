@@ -66,8 +66,6 @@
             Social_security_number_confirm: {
                 required: "Enter your Confirm SSN"
             }
-
-
         },
         onfocusout: function(element) {
             $(element).valid();
@@ -106,6 +104,8 @@
         },
         onFinished: function (event, currentIndex)
         {
+            form.submit();
+            console.log(event, currentIndex);
             alert('Sumited');
         },
         // onInit : function (event, currentIndex) {

@@ -227,6 +227,13 @@ namespace cisep.Controllers
             ViewBag.service = _unitOfWork.Services.GetById(id);
             return View();
         }
+        [HttpPost]
+        public ActionResult AddClient(Clients client)
+        {
+            _unitOfWork.Clients.Insert(client);
+            _unitOfWork.Save();
+            return RedirectToAction("Index", "Home");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
