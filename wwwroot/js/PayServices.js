@@ -33,12 +33,12 @@
         errorPlacement: function errorPlacement(error, element) {
              element.before(error); 
         },rules: {
-            Password: {
-                required: true,
-            },
-            Confirm_password: {
-                equalTo: "#Password"
-            },
+            //Password: {
+            //    required: true,
+            //},
+            //Confirm_password: {
+            //    equalTo: "#Password"
+            //},
             Social_security_number: {
                 required: true,
             },
@@ -60,16 +60,16 @@
             Email: {
                 required: "Enter your Email Address"
             },
-            Username: {
-                required: "Enter your Username"
-            },
-            Password: {
-                required: "Enter your Password"
-            },
-            Confirm_password: {
-                required: "Enter your Confirm Password",
-                equalTo: "Please enter the same password"
-            },
+            //Username: {
+            //    required: "Enter your Username"
+            //},
+            //Password: {
+            //    required: "Enter your Password"
+            //},
+            //Confirm_password: {
+            //    required: "Enter your Confirm Password",
+            //    equalTo: "Please enter the same password"
+            //},
             Address: {
                 required: "Enter your Street Address & Unit"
             },

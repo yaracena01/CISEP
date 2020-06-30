@@ -11,6 +11,7 @@ namespace cisep.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Id_Services { get; set; }
+        public decimal Price { get; set; }
         public Services Services { get; set; }
     }
 }

@@ -24,63 +24,20 @@
 
 <body style="background: url('@root')">
     <div class="main">
-        @*<div class="container2 login-Form">
-            <div class="title-PayServices">
-                <img class="img-fluid" src="~/images/logo3.0.png" width="125" />
-            </div>
-            <div class="header-title">
-
-                <h4>@Localizer["Make Payment"]</h4>
-                <h5>Login</h5>
-            </div>
-            <form method="GET" id="user-Form" asp-action="Login" asp-controller="Home" class="signup-form">
-                <div class="form-row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <input name="UserName" type="text" class="form-control-input" id="UserName" required />
-                            <label class="label-control required" for="UserName">@Localizer["Username"]</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <input name="Password" type="password" class="form-control-input" id="Password" required />
-                            <label class="label-control required" for="Password">@Localizer["Password"]</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <button class="btn" style="background-color:#37A; color:#fff; width:100%" type="submit">Login</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-lg-12" style="text-align:center">
-                        <a href="#">Register</a><br />
-                        <a href="#">Forgot password</a>
-                    </div>
-                </div>
-            
-            </form>
-        </div>*@
         <div class="container2">
             <div class="title-PayServices">
                 <img class="img-fluid" src="~/images/logo3.0.png" width="125" />
             </div>
-            <div class="header-title">
-
-                <h4>@Localizer["Make Payment"]</h4>
-                <h5>@Localizer[ViewBag.service.Name]</h5>
-            </div>
             <form method="POST" asp-action="AddClient" asp-controller="Home" id="signup-form" class="signup-form">
+                
                 <h3>
                 </h3>
                 <fieldset>
                     <legend>
+                        <div class="header-title">
+                            <h4>@Localizer["Authorize Payment Form"]</h4>
+                            @*<h5>@Localizer[ViewBag.service.Name]</h5>*@
+                        </div>
                         <span class="step-heading">@Localizer["Personal Information"]: </span>
                     </legend>
                     <div class="form-row">
@@ -105,31 +62,31 @@
                                 <label class="label-control required" for="Email">@Localizer["Email"]</label>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="Username" type="text" class="form-control-input" id="Username" required />
-                                <label class="label-control required" for="Username">@Localizer["Username"]</label>
-                            </div>
-                        </div>
+                        @*<div class="col-lg-6">
+                <div class="form-group">
+                    <input name="Username" type="text" class="form-control-input" id="Username" required />
+                    <label class="label-control required" for="Username">@Localizer["Username"]</label>
+                </div>
+            </div>*@
                     </div>
 
-                    <div class="form-row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="Password" type="password" class="form-control-input" id="Password" required />
-                                <label class="label-control required" for="Password">@Localizer["Password"]</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="Confirm_password" type="password" class="form-control-input" id="Confirm_password" required />
-                                <label class="label-control required" for="Confirm_password">@Localizer["Confirm Password"]</label>
-                            </div>
-                        </div>
-                    </div>
+                    @*<div class="form-row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <input name="Password" type="password" class="form-control-input" id="Password" required />
+                    <label class="label-control required" for="Password">@Localizer["Password"]</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <input name="Confirm_password" type="password" class="form-control-input" id="Confirm_password" required />
+                    <label class="label-control required" for="Confirm_password">@Localizer["Confirm Password"]</label>
+                </div>
+            </div>
+        </div>*@
                     <br />
                     <legend>
-                        <span style="color:#37A">@Localizer["Current Address"]: </span>
+                        <span style="color:#37A">@Localizer["Billing Address"]: </span>
                     </legend>
 
                     <div class="form-row">
@@ -153,7 +110,7 @@
                                     <option value=""></option>
                                     @foreach (var item in ViewBag.state.State)
                                     {
-                                        <option value="@item.Abbreviation-@item.Name">@item.Abbreviation-@item.Name</option>
+                                        <option value="@item.Name">@item.Name</option>
                                     }
                                 </select>
                                 <label class="label-control required active" for="State">@Localizer["Select Your State"]</label>
@@ -189,11 +146,11 @@
                 <fieldset>
                     <legend>
                         <span class="step-heading">
-                            @Localizer["Billing Information"]:
+                            @*@Localizer[ViewBag.service.Name] <br />*@ Start at 200$
                         </span>
                     </legend>
-                    <p>@Localizer["Please enter the credit card you wish to use for billing"].</p>
-
+                    @*<p>@Localizer["Please enter the credit card you wish to use for billing"].</p>*@
+                    @*<h5>@Localizer[ViewBag.service.Name]</h5>*@
                     <div class="form-row">
                         <div class="col-lg-8">
                             <div class="form-group">
@@ -210,7 +167,7 @@
                                     <option value=""></option>
                                     @foreach (var item in ViewBag.month.Month)
                                     {
-                                        <option value="@m">@item.Abbreviation-@item.Name</option>
+                                        <option value="@m">@item.Name</option>
                                         m++;
                                     }
                                 </select>
