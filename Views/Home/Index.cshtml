@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-<div class="navbar2 header py-2 navbar-custom" style="background:#E1E4ED;">
+<div class="navbar2 header py-2 navbar-custom" style="background:#fff;">
     <div class="container">
         <div class="row">
             <div class="col-md-3.5">
@@ -114,13 +114,15 @@
             <li class="nav-item">
                 <a class="nav-link page-scroll" asp-controller="ServicesPage" asp-action="CreditRepairIndex">@Localizer["Credit"]</a>
             </li>
+
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle page-scroll" href="#intro" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["About"]</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">@Localizer["Terms Conditions"]</span></a>
-                    <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">@Localizer["Privacity Polity"]</span></a>
-                </div>
+                <a class="nav-link page-scroll" href="#intro">@Localizer["About"]</a>
+                @*<a class="nav-link dropdown-toggle page-scroll" href="#intro" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["About"]</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">@Localizer["Terms Conditions"]</span></a>
+            <div class="dropdown-items-divide-hr"></div>
+            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">@Localizer["Privacity Polity"]</span></a>
+        </div>*@
             </li>
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="#contact">@Localizer["Contact"]</a>
@@ -201,10 +203,18 @@
                                     </div>
                                     @if (row.Url != "" && row.Url != null)
                                      {
-                                        <div class="button-container">
-                                        @Html.ActionLink("Book now", "PayServices", "Home",new {id = row.Id }, new { target = "_blank" })
-                                        @*<a class="btn-solid-reg page-scroll" target="_blank" href="@row.Url">@Localizer[row.UrlName]</a>*@
-                                        </div>
+                                <div class="button-container">
+                                    @if (row.Id != 2060)
+                                    {
+                                        @Html.ActionLink("Book now", "PayServices", "Home", new { id = row.Id }, new { target = "_blank", @class = "btn-solid-reg page-scroll" })
+                                    }
+                                    else
+                                    {
+                                        <a class="btn-solid-reg page-scroll" target="_blank" href="/ServicesPage/CreditRepairIndex">@Localizer[row.UrlName]</a>
+                                    }
+
+
+                                </div>
                                      }
                                 </div>
                             </div>

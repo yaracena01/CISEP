@@ -6,6 +6,7 @@
 @inject IJsonHelper Json;
 
 @{ 
+    var m = 1;
     var root = "/imagePay/pay" + ViewBag.service.Photo;
 }
 
@@ -17,26 +18,70 @@
     <meta name="author" content="colorlib.com">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form</title>
-    @*<link href="~/css/stepStyle.css" rel="stylesheet" />*@
     <link href="~/css/PayServices.css" rel="stylesheet" />
-    @*<link href="~/css/select2.min.css" rel="stylesheet" />*@
-    <link href="~/css/fontValera.css" rel="stylesheet" />
+    <link href="~/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body style="background: url('@root')">
     <div class="main">
+        @*<div class="container2 login-Form">
+            <div class="title-PayServices">
+                <img class="img-fluid" src="~/images/logo3.0.png" width="125" />
+            </div>
+            <div class="header-title">
+
+                <h4>@Localizer["Make Payment"]</h4>
+                <h5>Login</h5>
+            </div>
+            <form method="GET" id="user-Form" asp-action="Login" asp-controller="Home" class="signup-form">
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input name="UserName" type="text" class="form-control-input" id="UserName" required />
+                            <label class="label-control required" for="UserName">@Localizer["Username"]</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input name="Password" type="password" class="form-control-input" id="Password" required />
+                            <label class="label-control required" for="Password">@Localizer["Password"]</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <button class="btn" style="background-color:#37A; color:#fff; width:100%" type="submit">Login</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-lg-12" style="text-align:center">
+                        <a href="#">Register</a><br />
+                        <a href="#">Forgot password</a>
+                    </div>
+                </div>
+            
+            </form>
+        </div>*@
         <div class="container2">
             <div class="title-PayServices">
                 <img class="img-fluid" src="~/images/logo3.0.png" width="125" />
-                <h4>@Localizer["Make Payment"]</h4>
-                <h5>@ViewBag.service.Name</h5>
             </div>
-            <form method="POST" id="signup-form" class="signup-form">
+            <div class="header-title">
+
+                <h4>@Localizer["Make Payment"]</h4>
+                <h5>@Localizer[ViewBag.service.Name]</h5>
+            </div>
+            <form method="POST" asp-action="AddClient" asp-controller="Home" id="signup-form" class="signup-form">
                 <h3>
                 </h3>
                 <fieldset>
                     <legend>
-                        <span class="step-heading">@Localizer["Personal Informaltion"]: </span>
+                        <span class="step-heading">@Localizer["Personal Information"]: </span>
                     </legend>
                     <div class="form-row">
                         <div class="col-lg-6">
@@ -57,13 +102,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Email" type="email" class="form-control-input" id="Email" required />
-                                <label class="label-control" for="Email">@Localizer["Email"]</label>
+                                <label class="label-control required" for="Email">@Localizer["Email"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Username" type="text" class="form-control-input" id="Username" required />
-                                <label class="label-control" for="Username">@Localizer["Username"]</label>
+                                <label class="label-control required" for="Username">@Localizer["Username"]</label>
                             </div>
                         </div>
                     </div>
@@ -72,17 +117,17 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Password" type="password" class="form-control-input" id="Password" required />
-                                <label class="label-control" for="Password">@Localizer["Password"]</label>
+                                <label class="label-control required" for="Password">@Localizer["Password"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Confirm_password" type="password" class="form-control-input" id="Confirm_password" required />
-                                <label class="label-control" for="Confirm_password">@Localizer["Confirm Password"]</label>
+                                <label class="label-control required" for="Confirm_password">@Localizer["Confirm Password"]</label>
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <legend>
                         <span style="color:#37A">@Localizer["Current Address"]: </span>
                     </legend>
@@ -91,7 +136,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <input name="Address" type="text" class="form-control-input" id="Address" required />
-                                <label class="label-control" for="Address">@Localizer["Address"]</label>
+                                <label class="label-control required" for="Address">@Localizer["Address"]</label>
                             </div>
                         </div>
                     </div>
@@ -99,19 +144,19 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="City" type="text" class="form-control-input" id="City" required />
-                                <label class="label-control" for="City">@Localizer["City"]</label>
+                                <label class="label-control required" for="City">@Localizer["City"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group floating-label floating-select">
-                                <select name="State" id="State" class="form-control-select select2" required>
+                                <select name="State" id="State" class="form-control-select browser-default select2" required>
                                     <option value=""></option>
-                                    <option value="Sr">Sr</option>
-                                    <option value="Jr">Jr</option>
-                                    <option value="III">III</option>
-                                    <option value="IV">IV</option>
+                                    @foreach (var item in ViewBag.state.State)
+                                    {
+                                        <option value="@item.Abbreviation-@item.Name">@item.Abbreviation-@item.Name</option>
+                                    }
                                 </select>
-                                <label class="label-control" for="State">@Localizer["Select Your State"]</label>
+                                <label class="label-control required active" for="State">@Localizer["Select Your State"]</label>
                             </div>
                         </div>
                     </div>
@@ -119,22 +164,21 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Zip" type="number" class="form-control-input" id="Zip" required />
-                                <label class="label-control" for="Zip">@Localizer["Zip"]</label>
+                                <label class="label-control required" for="Zip">@Localizer["Zip"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <input name="Phone" type="number" class="form-control-input" id="Phone" required />
-                                <label class="label-control" for="Phone">@Localizer["Phone"]</label>
+                                <label class="label-control required" for="Phone">@Localizer["Phone"]</label>
                             </div>
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div class="col-lg-12">
                             <div class="form-check">
                                 <label class="form-check-label" for="check2">
-                                    <input type="checkbox" class="form-check-input" id="check2" name="option2">@Localizer["Cell Phone - send me information alerts via text messaging or email, if available"].
+                                    <input type="checkbox" class="form-check-input" id="check2" name="notification">@Localizer["Cell Phone - send me information alerts via text messaging or email, if available"].
                                 </label>
                             </div>
                         </div>
@@ -147,7 +191,6 @@
                         <span class="step-heading">
                             @Localizer["Billing Information"]:
                         </span>
-                        @*<span class="step-number">Step 2 / 4</span>*@
                     </legend>
                     <p>@Localizer["Please enter the credit card you wish to use for billing"].</p>
 
@@ -155,14 +198,9 @@
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <input name="CreditCardNumber" type="number" class="form-control-input" id="CreditCardNumber" required>
-                                <label class="label-control" for="CreditCardNumber">@Localizer["Credit Card Number (no spaces)"]</label>
+                                <span class="addStyle"><i></i></span>
+                                <label class="label-control required" for="CreditCardNumber">@Localizer["Credit Card Number"]</label>
                             </div>
-                        </div>
-                        <div class="col-lg-4 cards-billing">
-                            <span><i class="fab fa-cc-mastercard"></i></span>
-                            <span><i class="fab fa-cc-visa"></i></span>
-                            <span><i class="fab fa-cc-discover"></i></span>
-                            <span><i class="fab fa-cc-amex"></i></span>
                         </div>
                     </div>
                     <div class="form-row">
@@ -170,16 +208,13 @@
                             <div class="form-group floating-label floating-select">
                                 <select name="Month" id="Month" class="form-control-select select2" required>
                                     <option value=""></option>
-                                    <option value="January">@Localizer["January"]</option>
-                                    <option value="February">@Localizer["February"]</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
+                                    @foreach (var item in ViewBag.month.Month)
+                                    {
+                                        <option value="@m">@item.Abbreviation-@item.Name</option>
+                                        m++;
+                                    }
                                 </select>
-                                <label class="label-control" for="Month">@Localizer["Select Expiration Month"]</label>
+                                <label class="label-control required" for="Month">@Localizer["Select Expiration Month"]</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -204,70 +239,20 @@
                                     <option value="2035">2035</option>
                                     <option value="2036">2036</option>
                                 </select>
-                                <label class="label-control" for="Year">@Localizer["Select Expiration Year"]</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <input name="Cvc" type="number" class="form-control-input" id="Cvc" required>
-                                <label class="label-control" for="CreditCardNumber">CVC</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <legend>
-                        <span class="step-heading">@Localizer["Identity Verification"]:</span>
-                        <br />
-                        <p>@Localizer["Please enter your social security number and DOB to confirm your identity"].</p>
-                    </legend>
-
-                    <div class="form-row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="Social_security_number" type="password" class="form-control-input" id="Social_security_number" required />
-                                <label class="label-control" for="Social_security_number">@Localizer["Social Security Number"]</label>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="Social_security_number_confirm" type="password" class="form-control-input" id="Social_security_number_confirm" required />
-                                <label class="label-control" for="Social_security_number_confirm">@Localizer["Confirm SSN"]</label>
+                                <label class="label-control required" for="Year">@Localizer["Select Expiration Year"]</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-6">
-                            <div class="form-date">
-                                <label for="expiry_date" class="form-label">@Localizer["Date of Birth"]</label>
-                                <div class="form-date-group">
-                                    <div class="form-date-item">
-                                        <select id="birth_date" name="birth_date"></select>
-                                        <span class="select-icon"><i class="ti-angle-down"></i></span>
-                                    </div>
-                                    <div class="form-date-item">
-                                        <select id="birth_month" name="birth_month"></select>
-                                        <span class="select-icon"><i class="ti-angle-down"></i></span>
-                                    </div>
-                                    <div class="form-date-item">
-                                        <select id="birth_year" name="birth_year"></select>
-                                        <span class="select-icon"><i class="ti-angle-down"></i></span>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <input name="Cvc" type="number" class="form-control-input" id="Cvc" maxlength="3" required>
+                                <label class="label-control required" for="Cvc">CVC</label>
                             </div>
                         </div>
                     </div>
-                    <div class="">
-                        <div class="form-check">
-                            <label class="form-check-label" for="check2">
-                                <input type="checkbox" class="form-check-input" id="check2" name="option2">@Localizer["Cell Phone - send me information alerts via text messaging or email, if available"].
-                            </label>
-                        </div>
-                    </div>
-                    @*<h5 style="padding-top: 15px;">@Localizer["Details"]</h5>
-                        <p>@Localizer["By activating your account, you will be able to access your IdentityIQ membership benefits online in seconds. You will be billed $1.00 now and then $24.99 per month for as long as you continue your membership, after your 7 day trial. If you are not satisfied, you can cancel at any time to discontinue your membership and there will be no additional charges. By clicking on the “Activate” button below, you agree to the offer details, to the Terms and Conditions, acknowledge receipt of our Privacy Policy and agree to its terms, and confirm your authorization for IdentityIQ to obtain your credit profile from any consumer reporting agency for your own use, to confirm your identity to avoid fraudulent transactions in your name, and to monitor your credit for changes"].</p>*@
+                    <br />
+
                 </fieldset>
 
             </form>
@@ -277,13 +262,21 @@
 
 
 
-    @section scripts {     
+    @section scripts {
         <script src="~/js/vendor/jquery-validation/dist/jquery.validate.js"></script>
         <script src="~/js/vendor/jquery-validation/dist/additional-methods.js"></script>
         <script src="~/js/vendor/jquery-steps/jquery.steps.js"></script>
         <script src="~/js/PayServices.js"></script>
+        <script src="~/js/sweetalert.min.js"></script>
+        <script src="~/js/select2.min.js"></script>
         <script>
-
+            $(document).ready(function () {
+                $(".select2").select2({
+                    //placeholder: "Pick states",
+                    theme: "material",
+                    width: "100%"
+                });
+            });
         </script>
     }
 

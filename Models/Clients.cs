@@ -10,8 +10,6 @@ namespace cisep.Models
 		public int Id { get; set; }
 		public string First_name { get; set; }
 		public string Last_name { get; set; }
-		public string Suffix { get; set; }
-		public string Mi { get; set; }
 		public string Email { get; set; }
 		public string Username { get; set; }
 		public string Password { get; set; }
@@ -20,6 +18,7 @@ namespace cisep.Models
 		public string State { get; set; }
 		public string Zip { get; set; }
 		public string Phone { get; set; }
-		
-	}
+		public bool Notification { get; set; }
+
+}
 }
