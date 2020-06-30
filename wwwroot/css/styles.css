@@ -298,7 +298,7 @@ strong {
 
 .form-control-input,
 .form-control-select {
-	display: block; /* needed for proper display of the label in Firefox, IE, Edge */
+	display: block;
 	width: 100%;
 	padding-top: 1.25rem;
 	padding-bottom: 0.25rem;
@@ -309,7 +309,7 @@ strong {
 	color: #787976;
 	font: 400 0.875rem/1.375rem "Open Sans", sans-serif;
 	transition: all 0.2s;
-	-webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+	-webkit-appearance: none;
 }
 
 .form-control-select {
@@ -334,8 +334,7 @@ strong {
 	}
 }
 
-select {
-	/* you should keep these first rules in place to maintain cross-browser behavior */
+/*select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
@@ -345,10 +344,10 @@ select {
 	background-position: 96% 50%;
 	background-repeat: no-repeat;
 	outline: none;
-}
+}*/
 
 	select::-ms-expand {
-		display: none; /* removes the ugly default down arrow on select form field in IE11 */
+		display: none; 
 	}
 
 .form-control-textarea {

@@ -135,8 +135,8 @@
   <data name="Confirm SSN" xml:space="preserve">
     <value>Confirmar NSS</value>
   </data>
-  <data name="Credit Card Number (no spaces)" xml:space="preserve">
-    <value>Número de tarjeta de crédito (sin espacios)</value>
+  <data name="Credit Card Number" xml:space="preserve">
+    <value>Número de tarjeta de crédito</value>
   </data>
   <data name="Current Address" xml:space="preserve">
     <value>Dirección actual</value>
@@ -187,10 +187,10 @@
     <value>Ingrese su número de seguro social y fecha de nacimiento para confirmar su identidad</value>
   </data>
   <data name="Select Expiration Month" xml:space="preserve">
-    <value>Seleccionar mes de vencimiento</value>
+    <value>Mes de vencimiento</value>
   </data>
   <data name="Select Expiration Year" xml:space="preserve">
-    <value>Seleccionar año de vencimiento</value>
+    <value>Año de vencimiento</value>
   </data>
   <data name="Select Your State" xml:space="preserve">
     <value>Selecciona tu estado</value>

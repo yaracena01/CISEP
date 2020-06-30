@@ -90,7 +90,7 @@ body, p {
 	text-transform: none;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
 	color: #484a46;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	word-spacing: 2px;
@@ -100,68 +100,6 @@ h1 {
 	font-style: normal;
 	font-variant: normal;
 	text-transform: none;
-}
-
-h2 {
-	color: #484a46;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	
-	word-spacing: 2px;
-	color: #000000;
-	font-weight: normal;
-	text-decoration: none;
-	font-style: normal;
-	font-variant: normal;
-	text-transform: none;
-	font-weight: bold;
-}
-
-h3 {
-	color: #484a46;
-	/*font: 700 1.375rem/1.75rem "Montserrat", sans-serif;*/
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	
-	word-spacing: 2px;
-	color: #000000;
-	font-weight: normal;
-	text-decoration: none;
-	font-style: normal;
-	font-variant: normal;
-	text-transform: none;
-}
-
-h4 {
-	color: #484a46;
-	/*font: 700 1.375rem/1.75rem "Montserrat", sans-serif;*/
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	word-spacing: 2px;
-	color: #000000;
-	font-weight: normal;
-	text-decoration: none;
-	font-style: normal;
-	font-variant: normal;
-	text-transform: none;
-	/*color: #484a46;
-	font: 700 1.25rem/1.625rem "Montserrat", sans-serif;*/
-}
-
-h5 {
-	color: #484a46;
-	/*font: 700 1.125rem/1.5rem "Montserrat", sans-serif;*/
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	
-	word-spacing: 2px;
-	color: #000000;
-	font-weight: normal;
-	text-decoration: none;
-	font-style: normal;
-	font-variant: normal;
-	text-transform: none;
-}
-
-h6 {
-	color: #484a46;
-	font: 700 1rem/1.375rem "Montserrat", sans-serif;
 }
 
 a {
@@ -318,22 +256,10 @@ strong {
 	cursor: text;
 	transition: all 0.2s ease;
 }
-/*YARIEL*/
-/*.navbar-custom .fa-stack .fa-stack-2x {
-	color: #37A;
-	transition: all 0.2s ease;
-}
 
-.navbar-custom .fa-stack-1x {
-	font-size: 0.6875rem;
-	line-height: 1.625rem;
-	color: #fff;
-	transition: all 0.2s ease;
-}*/
 .form-2 {
 	padding-top: 7rem;
 	padding-bottom: 6.25rem;
-	/*background: url('../images/contact-background.jpg') center center no-repeat;*/
 	background-size: cover;
 }
 	.form-2 .map-responsive {
@@ -372,7 +298,7 @@ strong {
 
 .form-control-input,
 .form-control-select {
-	display: block; /* needed for proper display of the label in Firefox, IE, Edge */
+	display: block;
 	width: 100%;
 	padding-top: 1.25rem;
 	padding-bottom: 0.25rem;
@@ -383,7 +309,7 @@ strong {
 	color: #787976;
 	font: 400 0.875rem/1.375rem "Open Sans", sans-serif;
 	transition: all 0.2s;
-	-webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+	-webkit-appearance: none;
 }
 
 .form-control-select {
@@ -408,8 +334,7 @@ strong {
 	}
 }
 
-select {
-	/* you should keep these first rules in place to maintain cross-browser behavior */
+/*select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
@@ -419,10 +344,10 @@ select {
 	background-position: 96% 50%;
 	background-repeat: no-repeat;
 	outline: none;
-}
+}*/
 
 	select::-ms-expand {
-		display: none; /* removes the ugly default down arrow on select form field in IE11 */
+		display: none; 
 	}
 
 .form-control-textarea {

@@ -163,12 +163,6 @@ namespace cisep.Models
                   .HasMaxLength(15)
                   .IsUnicode(false);
 
-                entity.Property(e => e.Social_security_number)
-                 .IsRequired()
-                 .HasColumnName("social_security_number")
-                 .HasMaxLength(15)
-                 .IsUnicode(false);
-
                 entity.Property(e => e.Notification)
                 .IsRequired()
                 .HasColumnName("notification")

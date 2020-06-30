@@ -21,6 +21,7 @@ using Twilio.Rest.Api.V2010.Account;
 using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace cisep.Controllers
 {
@@ -224,15 +225,29 @@ namespace cisep.Controllers
 
         public ActionResult PayServices(int id)
         {
+            var folderDetailsStates = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\{"jsonFiles\\states_titlecase.json"}");
+            var folderDetailsMonths = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\{"jsonFiles\\Months.json"}");
+            var JSONStates = System.IO.File.ReadAllText(folderDetailsStates);
+            var JSONMonths = System.IO.File.ReadAllText(folderDetailsMonths);
+            ViewBag.state =  Newtonsoft.Json.JsonConvert.DeserializeObject<States>(JSONStates);
+            ViewBag.month = Newtonsoft.Json.JsonConvert.DeserializeObject<Months>(JSONMonths);
             ViewBag.service = _unitOfWork.Services.GetById(id);
             return View();
         }
+
+        public ActionResult Login(int id)
+        {
+           
+            return Json(new { success = true });
+        }
+
         [HttpPost]
         public ActionResult AddClient(Clients client)
         {
             _unitOfWork.Clients.Insert(client);
             _unitOfWork.Save();
-            return RedirectToAction("Index", "Home");
+            return Json(new { success = true, clientName = client.First_name + " " + client.Last_name });
+            //return RedirectToAction("Index", "Home");
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

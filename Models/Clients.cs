@@ -18,7 +18,6 @@ namespace cisep.Models
 		public string State { get; set; }
 		public string Zip { get; set; }
 		public string Phone { get; set; }
-		public string Social_security_number { get; set; }
 		public bool Notification { get; set; }
 
 }
