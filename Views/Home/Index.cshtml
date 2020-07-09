@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNetCore.Localization
-@using Microsoft.AspNetCore.Mvc.Localization
+﻿@using Microsoft.AspNetCore.Mvc.Localization
 
 
 @inject IViewLocalizer Localizer
@@ -9,7 +8,6 @@
 @{
     ViewData["Title"] = "Home Page";
     var i = 0;
-
 }
 
 <div class="navbar3 header py-2 navbar-custom" style="background:#fff;">
@@ -117,12 +115,6 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link page-scroll" href="#intro">@Localizer["About"]</a>
-                @*<a class="nav-link dropdown-toggle page-scroll" href="#intro" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["About"]</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">@Localizer["Terms Conditions"]</span></a>
-            <div class="dropdown-items-divide-hr"></div>
-            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">@Localizer["Privacity Polity"]</span></a>
-        </div>*@
             </li>
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="#contact">@Localizer["Contact"]</a>
@@ -182,11 +174,11 @@
                                         <p style="white-space: pre-line;color:black">@Localizer[row.Description]</p>
                                         <ul class="list-unstyled li-space-lg" style="text-align:left">
                                             @foreach (var sd in row.Services_Details)
-                                                {
-                                                    i++;
+                                            {
+                                                i++;                                             
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">@sd.Name</div>
+                                                <div class="media-body">@Localizer[sd.Name]</div>
                                             </li>
                                                     if (i == 5)
                                                     {
@@ -195,7 +187,7 @@
                                                     }
                                                 }
                                         </ul>
-                                        <p>
+                                        <p>           
                                             <a style="font-size: 12px;font-weight: bold;" class="popup-with-move-anim" id="model" onclick='getValues(@Json.Serialize(row));' href="#project-1">
                                                 <div class="element-item-overlay"><span>@Localizer["More Information"]</span></div>
                                             </a>
@@ -450,20 +442,20 @@
         <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
         <div class="col-lg-12 cards-2" style="padding-top:0px">
             <img class="img-fluid imgs" src="" alt="alternative">
-            <h3 style="text-align:left;" class="tls">Market Domination</h3>
+            <h3 style="text-align:left;" class="tls"></h3>
             <hr class="line-heading">
             <p class="prs" style="white-space: pre-line;"></p>
             <ul class="list-unstyled li-space-lg ds">
                 <li class="media">
                     <i class="fas fa-square"></i>
-                    <div class="media-body">Maintaining the leader status</div>
+                    <div class="media-body"></div>
                 </li>
                 <li class="media">
                     <i class="fas fa-square"></i>
-                    <div class="media-body">Acquisitions the right way</div>
+                    <div class="media-body"></div>
                 </li>
             </ul>
-            <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+            <a class="btn-outline-reg mfp-close as-button" href="#services">@Localizer["BACK"]</a>
         </div>
     </div>
 </div>
@@ -616,11 +608,13 @@
                     });
 
         });
+        $.localization = true
         function getValues(model) {
             $('#project-1 .imgs').attr('src', 'imageServices/' + model.photo);
             $('#project-1 .tls').html(model.name);
             $('#project-1 .prs').html(model.description);
             var detailServices = "";
+            
             for (var s of model.services_Details) {
                 detailServices += "<li class='media'><i class='fas fa-square'></i><div class='media-body'>" + s.name + "</div></li >"
             }

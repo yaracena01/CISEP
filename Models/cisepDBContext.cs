@@ -19,6 +19,7 @@ namespace cisep.Models
         public virtual DbSet<services_detail> Services_Details { get; set; }
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Carrier> Carrier { get; set; }
+        public virtual DbSet<flex_pay> Flex_pay { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -159,6 +160,21 @@ namespace cisep.Models
                 .IsRequired()
                 .HasColumnName("notification")
                 .IsUnicode(false);
+
+            });
+
+            modelBuilder.Entity<flex_pay>(entity =>
+            {
+                entity.ToTable("flex_pay");
+
+                entity.Property(e => e.Code).HasColumnName("code");
+
+                entity.HasKey(e => e.Code);
+
+                entity.Property(e => e.Amount)
+                    .IsRequired()
+                    .HasColumnName("amount")
+                    .IsUnicode(false);
 
             });
 

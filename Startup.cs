@@ -1,26 +1,19 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using cisep.Helpers;
 using cisep.interfaces;
 using cisep.Models;
 using cisep.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Localization.Routing;
-using System.Security.Policy;
+
 
 namespace cisep
 {
@@ -55,7 +48,6 @@ namespace cisep
                     opts => { opts.ResourcesPath = "Resources"; })
                 .AddDataAnnotationsLocalization();
 
-
             services.Configure<RequestLocalizationOptions>(
                opts =>
                {
@@ -70,6 +62,11 @@ namespace cisep
                    opts.SupportedCultures = supportedCultures;
                    // UI strings that we have localized.
                    opts.SupportedUICultures = supportedCultures;
+                   opts.RequestCultureProviders = new List<IRequestCultureProvider>
+                    {
+                        new QueryStringRequestCultureProvider(),
+                        new CookieRequestCultureProvider()
+                    };
                });
 
             //services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -90,11 +87,9 @@ namespace cisep
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            app.UseRequestLocalization(options.Value);
-
             app.UseRouting();
+            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
+            app.UseRequestLocalization(options);
 
             app.UseAuthorization();
 

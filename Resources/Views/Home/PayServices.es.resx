@@ -120,6 +120,21 @@
   <data name="Address" xml:space="preserve">
     <value>Dirección</value>
   </data>
+  <data name="Amount payable" xml:space="preserve">
+    <value>Cantidad pagable</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>abril</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>agosto</value>
+  </data>
+  <data name="Authorize Payment Form" xml:space="preserve">
+    <value>Formulario de Pago</value>
+  </data>
+  <data name="Billing Address" xml:space="preserve">
+    <value>Dirección de Envio</value>
+  </data>
   <data name="Billing Information" xml:space="preserve">
     <value>Datos de facturación</value>
   </data>
@@ -128,6 +143,12 @@
   </data>
   <data name="City" xml:space="preserve">
     <value>Ciudad</value>
+  </data>
+  <data name="click here" xml:space="preserve">
+    <value>haga clic aquí</value>
+  </data>
+  <data name="Click here flexible payment" xml:space="preserve">
+    <value>Haga clic aquí para pago flexible</value>
   </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>Confirmar contraseña</value>
@@ -144,6 +165,9 @@
   <data name="Date of Birth" xml:space="preserve">
     <value>Fecha de nacimiento</value>
   </data>
+  <data name="December" xml:space="preserve">
+    <value>diciembre</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>Detalle</value>
   </data>
@@ -152,6 +176,9 @@
   </data>
   <data name="February" xml:space="preserve">
     <value>Febrero</value>
+  </data>
+  <data name="February1" xml:space="preserve">
+    <value>febrero</value>
   </data>
   <data name="First Name" xml:space="preserve">
     <value>Nombre</value>
@@ -162,11 +189,32 @@
   <data name="January" xml:space="preserve">
     <value>Enero</value>
   </data>
+  <data name="January1" xml:space="preserve">
+    <value>enero</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>julio</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>junio</value>
+  </data>
   <data name="Last Name" xml:space="preserve">
     <value>Apellido</value>
   </data>
   <data name="Make Payment" xml:space="preserve">
     <value>Hacer pago</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>marzo</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>mayo</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>noviembre</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>octubre</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opciones</value>
@@ -175,6 +223,9 @@
     <value>Contraseña</value>
   </data>
   <data name="Personal Informaltion" xml:space="preserve">
+    <value>Información Personal</value>
+  </data>
+  <data name="Personal Information" xml:space="preserve">
     <value>Información Personal</value>
   </data>
   <data name="Phone" xml:space="preserve">
@@ -192,8 +243,14 @@
   <data name="Select Expiration Year" xml:space="preserve">
     <value>Año de vencimiento</value>
   </data>
+  <data name="Select your services of" xml:space="preserve">
+    <value>Seleccione sus servicios de</value>
+  </data>
   <data name="Select Your State" xml:space="preserve">
     <value>Selecciona tu estado</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>septiembre</value>
   </data>
   <data name="Social Security Number" xml:space="preserve">
     <value>Número de seguro social</value>

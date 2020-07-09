@@ -6,11 +6,120 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATy6TDJ9+n0aEDPvSDCyvJQAAAAACAAAAAAAQZgAAAAEAACAAAADdIw/rQK69lU3SeStTdIUWvMfJSHbZNvZTaMrmun4jDwAAAAAOgAAAAAIAACAAAAAJuWKgslckPhhAJQ7fS/KxSwzFASUs+9gD9j9HCvlmeiAAAACJi081tw4QOhFcbNArkmdu0BtKlO/ty9ZzeiRbLpWA1UAAAABtHBNoc3av/nYsd8OEVdIYkm5mBnT87EQqSV+dlImC/hJOqjoLved09bJ1vDFA2PJtKbDQU2ooKOOxA+0smNof</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfTjxOEOuGUyL3VJqkTLCZgAAAAACAAAAAAAQZgAAAAEAACAAAACfztWVlRDaq2Ma+UOecudW9F0F11r8f8U32RAOpxtPrAAAAAAOgAAAAAIAACAAAAC9GCasoC970A0BwCFZk2nRbbgSTa4EV0r4HWvTEHkPIyAAAADtk/GBlhrap8f9w/eCAqd3Zc1AuzGbME9BjDBXsFaxYEAAAAASLwL9pVkBujh4KzKoMSgaJw3oWNDFpP/cjYkwDD5E4Luyz9HZTq81aGXxQyTfragx6aLxs4pfBrJhx6kRaCG4</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp.smarterasp.net/cisep</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
-    <DestinationConnectionStrings Include="DefaultConnection">
-      <Value>Data Source=SQL5047.site4now.net%3bInitial Catalog=DB_A5E69E_cisepDB%3bUser Id=DB_A5E69E_cisepDB_admin%3bPassword=Abcd1234.%3b</Value>
-    </DestinationConnectionStrings>
+    <File Include="appsettings.Development.json">
+      <publishTime>04/21/2020 10:37:06</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/19/2020 19:00:55</publishTime>
+    </File>
+    <File Include="BouncyCastle.Crypto.dll">
+      <publishTime>02/24/2020 15:29:24</publishTime>
+    </File>
+    <File Include="cisep.deps.json">
+      <publishTime>07/09/2020 17:27:30</publishTime>
+    </File>
+    <File Include="cisep.exe">
+      <publishTime>07/09/2020 17:27:13</publishTime>
+    </File>
+    <File Include="cisep.pdb">
+      <publishTime>07/09/2020 17:27:13</publishTime>
+    </File>
+    <File Include="cisep.runtimeconfig.json">
+      <publishTime>06/15/2020 09:56:41</publishTime>
+    </File>
+    <File Include="cisep.Views.pdb">
+      <publishTime>07/09/2020 17:27:16</publishTime>
+    </File>
+    <File Include="ClosedXML.dll">
+      <publishTime>04/26/2020 13:35:12</publishTime>
+    </File>
+    <File Include="DocumentFormat.OpenXml.dll">
+      <publishTime>06/06/2017 22:59:22</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>05/12/2020 19:55:52</publishTime>
+    </File>
+    <File Include="ExcelMapper.dll">
+      <publishTime>04/06/2020 09:22:48</publishTime>
+    </File>
+    <File Include="ExcelNumberFormat.dll">
+      <publishTime>03/13/2020 09:36:50</publishTime>
+    </File>
+    <File Include="ICSharpCode.SharpZipLib.dll">
+      <publishTime>08/09/2019 08:40:20</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>09/12/2019 17:08:34</publishTime>
+    </File>
+    <File Include="Microsoft.Data.SqlClient.dll">
+      <publishTime>09/26/2019 20:43:28</publishTime>
+    </File>
+    <File Include="Microsoft.Data.Sqlite.dll">
+      <publishTime>12/14/2019 20:11:22</publishTime>
+    </File>
+    <File Include="Microsoft.DotNet.PlatformAbstractions.dll">
+      <publishTime>12/09/2019 03:40:04</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Sqlite.dll">
+      <publishTime>12/14/2019 20:11:52</publishTime>
+    </File>
+    <File Include="Microsoft.Identity.Client.dll">
+      <publishTime>04/29/2019 22:04:14</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>10/05/2018 19:35:44</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Logging.dll">
+      <publishTime>10/05/2018 19:36:18</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>10/05/2018 19:42:50</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>05/12/2020 19:55:36</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>05/12/2020 19:55:42</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>05/12/2020 19:55:46</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>05/12/2020 19:55:44</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>05/12/2020 19:55:40</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>05/12/2020 19:55:38</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>05/12/2020 19:55:48</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.Bson.dll">
+      <publishTime>11/27/2018 23:10:18</publishTime>
+    </File>
+    <File Include="NPOI.dll">
+      <publishTime>04/04/2020 12:49:10</publishTime>
+    </File>
+    <File Include="NPOI.OOXML.dll">
+      <publishTime>04/04/2020 12:49:10</publishTime>
+    </File>
+    <File Include="NPOI.OpenXml4Net.dll">
+      <publishTime>04/04/2020 12:49:10</publishTime>
+    </File>
+    <File Include="NPOI.OpenXmlFormats.dll">
+      <publishTime>04/04/2020 12:49:10</publishTime>
+    </File>
+    <File Include="NuGet.Frameworks.dll">
+      <publishTime>04/18/2020 21:50:01</publishTime>
+    </File>
   </ItemGroup>
 </Project>

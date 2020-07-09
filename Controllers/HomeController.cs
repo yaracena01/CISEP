@@ -247,7 +247,22 @@ namespace cisep.Controllers
             _unitOfWork.Clients.Insert(client);
             _unitOfWork.Save();
             return Json(new { success = true, clientName = client.First_name + " " + client.Last_name });
-            //return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult flexPay(string code)
+        {
+            try
+            {
+                var flex_Pay = _unitOfWork.Flex_Pay.GetById(code);
+                _unitOfWork.Flex_Pay.Delete(flex_Pay);
+                _unitOfWork.Save();
+                return Json(new { data = flex_Pay.Amount, success=true, message= "You can now make your flexible payment." });
+            }
+            catch (Exception)
+            {
+                return Json(new { success = false, message = "You can now make your flexible payment." });
+            }
+            
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
