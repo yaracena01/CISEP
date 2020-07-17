@@ -68,9 +68,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-container">
-                    <div class="section-title">Credit Repair</div>
+                    <div class="section-title">@Localizer["Credit Repair"]</div>
                     <h4 style="text-align:center;">@Localizer["YOU NEED CREDIT REPAIR BACKED BY THE LAWS THAT PROTECT YOU"]</h4>
-                    <p style="text-align:center;border-bottom: 1px solid #37A;padding-bottom: 15px">@Localizer["Creditors know that most consumers don’t know the credit laws that protect them. This is where we come in. Let us fight for you. We focus on the credit laws in place to ensure that your creditors are adhering to the FCRA (Fair Credit Reporting Act) and the FDCPA (Fair Debt Collection Practices Act). Our Clients rest easy knowing that they are paying for results and not broken promises."]</p>
+                    <p style="text-align:center;border-bottom: 1px solid #37A;padding-bottom: 15px">@Localizer["Creditors know that most consumers don’t know the credit laws that protect them. This is where we come in. Let us fight for you. We focus on the credit laws in place to ensure that your creditors are adhering to the FCRA (Fair Credit Reporting Act) and the FDCPA (Fair Debt Collection Practices Act). Our Clients rest easy knowing that they are paying for results and not broken promises"].</p>
                     <div class="row cards-4 cards-3">
                         <div class="col-md-12">
                             <div class="slider-container">
@@ -86,28 +86,24 @@
                                                     <img class="img-fluid" src="~/imageServices/@row.Photo" alt="alternative">
                                                 </div>
                                                 <div class="card-body">
-                                                    <h3 class="card-title">@row.Name</h3>
-                                                    <p style="white-space: pre-line;color:black">@row.Description</p>
+                                                    <h3 class="card-title">@Localizer[row.Name]</h3>
+                                                    <p style="white-space: pre-line;color:black">@Localizer[row.Description]</p>
                                                     <ul class="list-unstyled li-space-lg" style="text-align:left">
                                                         @foreach (var sd in row.Services_Details)
                                                             {
                                                         <li class="media">
                                                             <i class="fas fa-square"></i>
-                                                            <div class="media-body">@sd.Name</div>
+                                                            <div class="media-body">@Localizer[sd.Name]</div>
                                                         </li>
 
                                                             }
                                                     </ul>
-                                                    <p>
-                                                        @*<a style="font-size: 12px; font-weight: bold;" class="popup-with-move-anim" href="#project-1">
-                                                                <div class="element-item-overlay"><span>More Information</span></div>
-                                                            </a>*@
-                                                    </p>
+                                                   
                                                 </div>
                                                 @if (row.Url != "" && row.Url != null)
                                                     {
                                                 <div class="button-container">
-                                                    <a class="btn-solid-reg page-scroll" href="@row.Url">@Localizer[row.UrlName]</a>
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="@row.Url">@Localizer[row.UrlName]</a>
                                                 </div>  <!-- end of button-container -->
 
                                                     }
@@ -140,19 +136,19 @@
             <div class="col-lg-12">
                 <div class="text-container">
                     <div class="section-title" style="text-align:left !important">@Localizer["Credit Repair Program"]</div>
-                    <h3 style="text-align:center">Credit Repair Program</h3>
+                    <h3 style="text-align:center">@Localizer["Credit Repair Program"]</h3>
                     <p style="text-align:left">
-                        When you start with CISEP Multi-Services Credit Consulting  we provide an expert, detailed audit of your credit report. We believe this meticulous review is the critical ingredient that makes the difference between superficial results and dramatic credit repair success. You can sign up for our credit repair program with zero upfront fees. Clients rest easy with the peace of mind in knowing that they are paying for results and not broken promises.
+                        @Localizer["When you start with CISEP Multi-Services Credit Consulting  we provide an expert, detailed audit of your credit report. We believe this meticulous review is the critical ingredient that makes the difference between superficial results and dramatic credit repair success. You can sign up for our credit repair program with zero upfront fees. Clients rest easy with the peace of mind in knowing that they are paying for results and not broken promises"].
                     </p>
-                    <h5 style="color:#37A; text-align:left">Initial Audit Fee – $189 Per Person</h5>
-                    <p style="text-align:left;">(One-time fee, charged 5 days after signing up for credit repair services)</p>
-                    <p style="color:#37A; text-align:left">Below are the services included in our Initial Audit:</p>
+                    <h5 style="color:#37A; text-align:left">@Localizer["Initial Audit Fee – $189 Per Person"]</h5>
+                    <p style="text-align:left;">@Localizer["(One-time fee, charged 5 days after signing up for credit repair services)"]</p>
+                    <p style="color:#37A; text-align:left">@Localizer["Below are the services included in our Initial Audit"]:</p>
                     <div class="row" style="padding-top: 1rem;padding-bottom: 2rem;">
                         <div class="col-md-4">
                             <div class="card" style="width: 20rem;">
                                 <ul class="list-group list-group-flush">
-                                    <li style="color: #37A;" class="list-group-item">Provided With 24/7 Online Account Access To Client Portal</li>
-                                    <li style="color: #37A;" class="list-group-item">Negative Items Added To Database For Disputing Inaccuracies</li>
+                                    <li style="color: #37A;" class="list-group-item">@Localizer["Provided With 24/7 Online Account Access To Client Portal"]</li>
+                                    <li style="color: #37A;" class="list-group-item">@Localizer["Negative Items Added To Database For Disputing Inaccuracies"]</li>
                                 </ul>
                             </div>
                             @*<div style="background-color:#37A; color:white; padding: 15px; margin-bottom: 12px;border-radius: 5px;"><ul style="margin: 0px;padding-left: 15px;"><li style="list-style:none;"><a>Provided With 24/7 Online Account Access To Client Portal</a></li></ul></div>
@@ -163,8 +159,8 @@
                         <div class="col-md-4">
                             <div class="card" style="width: 20rem;">
                                 <ul class="list-group list-group-flush">
-                                    <li style="color: #37A;" class="list-group-item">Provided with 15+ Page Initial Audit Report and The Action Plan</li>
-                                    <li style="color: #37A;" class="list-group-item">1st Round Of Dispute Letters Created And Sent To Credit Bureaus</li>
+                                    <li style="color: #37A;" class="list-group-item">@Localizer["Provided with 15+ Page Initial Audit Report and The Action Plan"]</li>
+                                    <li style="color: #37A;" class="list-group-item">@Localizer["1st Round Of Dispute Letters Created And Sent To Credit Bureaus"]</li>
 
                                 </ul>
                             </div>
@@ -176,15 +172,15 @@
                         <div class="col-md-4">
                             <div class="card" style="width: 20rem;">
                                 <ul class="list-group list-group-flush">
-                                    <li style="color: #37A;" class="list-group-item">Personal Information Deleted For First Steps Of Restoration Process</li>
-                                    <li style="color: #37A;" class="list-group-item">Provided With 24/7 Online Account Access To Client Portal</li>
+                                    <li style="color: #37A;" class="list-group-item">@Localizer["Personal Information Deleted For First Steps Of Restoration Process"]</li>
+                                    <li style="color: #37A;" class="list-group-item">@Localizer["Provided With 24/7 Online Account Access To Client Portal"]</li>
 
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <p style="text-align:center">A deletion fee is invoiced for the complete deletion of an item. The deletion fees below are per item and per bureau. The deletion of ANY item from ANY bureau counts as ONE (1) deletion. The deletion of any account or public record from all three credit bureaus counts as THREE (3) deletions. Once you have a balance with us for the items that were deleted, you will be billed no more than $75 a month until your balance is paid off. You will not be required to pay off your balance in full. Example, if there are 6 collections deleted, we will send you an invoice of $300, in which you will be required to pay $75 a month for 4 months.</p>
+                    <p style="text-align:center">@Localizer["A deletion fee is invoiced for the complete deletion of an item. The deletion fees below are per item and per bureau. The deletion of ANY item from ANY bureau counts as ONE (1) deletion. The deletion of any account or public record from all three credit bureaus counts as THREE (3) deletions. Once you have a balance with us for the items that were deleted, you will be billed no more than $75 a month until your balance is paid off. You will not be required to pay off your balance in full. Example, if there are 6 collections deleted, we will send you an invoice of $300, in which you will be required to pay $75 a month for 4 months"].</p>
 
                     @*Card*@
                     <div class="row cards-4">
@@ -196,12 +192,12 @@
                                             <!-- Card -->
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h3 class="card-title">INQUIRES</h3>
-                                                    <p>PER ITEM - PER BUREAU</p>
-                                                    <p class="price">Starting at <span>$199</span></p>
+                                                    <h3 class="card-title">@Localizer["INQUIRES"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$10</span></p>
                                                 </div>
                                                 <div class="button-container">
-                                                    <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -209,12 +205,12 @@
                                             <!-- Card -->
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h3 class="card-title">LATE PAYMENTS</h3>
-                                                    <p>PER ITEM - PER BUREAU</p>
-                                                    <p class="price">Starting at <span>$199</span></p>
+                                                    <h3 class="card-title">@Localizer["Late Payments"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$10</span></p>
                                                 </div>
                                                 <div class="button-container">
-                                                    <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -222,12 +218,77 @@
                                             <!-- Card -->
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h3 class="card-title">COLLECTIONS</h3>
-                                                    <p>PER ITEM - PER BUREAU</p>
-                                                    <p class="price">Starting at <span>$199</span></p>
+                                                    <h3 class="card-title">@Localizer["COLLECTIONS"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$50</span></p>
                                                 </div>
                                                 <div class="button-container">
-                                                    <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <!-- Card -->
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h3 class="card-title">@Localizer["CHARGE-OFFS"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$50</span></p>
+                                                </div>
+                                                <div class="button-container">
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <!-- Card -->
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h3 class="card-title">@Localizer["FORECLOSURES"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$75</span></p>
+                                                </div>
+                                                <div class="button-container">
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <!-- Card -->
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h3 class="card-title">@Localizer["REPOSSESSIONS"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$75</span></p>
+                                                </div>
+                                                <div class="button-container">
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <!-- Card -->
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h3 class="card-title">@Localizer["EVICTIONS"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$100</span></p>
+                                                </div>
+                                                <div class="button-container">
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <!-- Card -->
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h3 class="card-title">@Localizer["PUBLIC RECORDS"]</h3>
+                                                    <p>@Localizer["PER ITEM - PER BUREAU"]</p>
+                                                    <p class="price">@Localizer["Starting at"] <span>$100</span></p>
+                                                </div>
+                                                <div class="button-container">
+                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="https://www.identityiq.com/signup-personalinfo.aspx">@Localizer["Book now"]</a>
                                                 </div>
                                             </div>
                                         </div>

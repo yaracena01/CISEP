@@ -19,6 +19,7 @@ namespace cisep.Models
         public virtual DbSet<services_detail> Services_Details { get; set; }
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Carrier> Carrier { get; set; }
+        public virtual DbSet<flex_pay> Flex_pay { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -90,6 +91,10 @@ namespace cisep.Models
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Price)
+                 .HasColumnName("price")
+                 .IsUnicode(false);
+
                 entity.HasOne(e => e.Services)
                       .WithMany(es => es.Services_Details);
             });
@@ -120,18 +125,6 @@ namespace cisep.Models
                    .HasColumnName("email")
                    .HasMaxLength(100)
                    .IsUnicode(false);
-
-                entity.Property(e => e.Username)
-                   .IsRequired()
-                   .HasColumnName("username")
-                   .HasMaxLength(25)
-                   .IsUnicode(false);
-
-                entity.Property(e => e.Password)
-                  .IsRequired()
-                  .HasColumnName("password")
-                  .HasMaxLength(25)
-                  .IsUnicode(false);
 
                 entity.Property(e => e.Address)
                   .IsRequired()
@@ -166,8 +159,22 @@ namespace cisep.Models
                 entity.Property(e => e.Notification)
                 .IsRequired()
                 .HasColumnName("notification")
-                .HasColumnType("bool")
                 .IsUnicode(false);
+
+            });
+
+            modelBuilder.Entity<flex_pay>(entity =>
+            {
+                entity.ToTable("flex_pay");
+
+                entity.Property(e => e.Code).HasColumnName("code");
+
+                entity.HasKey(e => e.Code);
+
+                entity.Property(e => e.Amount)
+                    .IsRequired()
+                    .HasColumnName("amount")
+                    .IsUnicode(false);
 
             });
 

@@ -46,7 +46,19 @@ namespace cisep.Controllers
         public async Task<IActionResult> Index()
         {
             var model = _unitOfWork.Services.GetAll();
+
             var vw = _mapper.Map<List<ServicesViewModel>>(model);
+            foreach (var x in vw)
+            {
+                x.Name = _localizer.GetString(x.Name);
+                x.Description = _localizer.GetString(x.Description);
+                x.UrlName = _localizer.GetString(x.UrlName);
+
+                foreach (var x2 in x.Services_Details)
+                {
+                    x2.Name = _localizer.GetString(x2.Name);
+                }
+            }
             ViewBag.services = vw;       
             ViewBag.idiom = Request.Cookies["Idiom"] == null ? "English" : Request.Cookies["Idiom"];        
             return View();
@@ -247,7 +259,22 @@ namespace cisep.Controllers
             _unitOfWork.Clients.Insert(client);
             _unitOfWork.Save();
             return Json(new { success = true, clientName = client.First_name + " " + client.Last_name });
-            //return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult flexPay(string code)
+        {
+            try
+            {
+                var flex_Pay = _unitOfWork.Flex_Pay.GetById(code);
+                _unitOfWork.Flex_Pay.Delete(flex_Pay);
+                _unitOfWork.Save();
+                return Json(new { data = flex_Pay.Amount, success=true, message= "You can now make your flexible payment." });
+            }
+            catch (Exception)
+            {
+                return Json(new { success = false, message = "You can now make your flexible payment." });
+            }
+            
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

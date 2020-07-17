@@ -13,6 +13,7 @@ namespace cisep.Repositories
         private readonly cisepDBContext _context;
         private IServices _IservicesRepo;
         private IClients _IclientsRepo;
+        private IFlex_pay _Iflex_pay;
         public UnitOfWorkRepo(cisepDBContext context)
         {
             _context = context;
@@ -30,6 +31,14 @@ namespace cisep.Repositories
             get
             {
                 return _IclientsRepo = _IclientsRepo ?? new ClientsRepo(_context);
+            }
+            set { }
+        }
+
+        public IFlex_pay Flex_Pay {
+            get
+            {
+                return _Iflex_pay = _Iflex_pay ?? new Flex_payRepo(_context);
             }
             set { }
         }

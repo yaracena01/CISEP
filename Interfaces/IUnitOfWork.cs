@@ -10,7 +10,7 @@ namespace cisep.interfaces
     {
         public IServices Services { get; set; }
         public IClients Clients { get; set; }
-
+        public IFlex_pay Flex_Pay { get; set; }
         void Save();
     }
 }
