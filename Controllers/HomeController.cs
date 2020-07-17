@@ -46,7 +46,19 @@ namespace cisep.Controllers
         public async Task<IActionResult> Index()
         {
             var model = _unitOfWork.Services.GetAll();
+
             var vw = _mapper.Map<List<ServicesViewModel>>(model);
+            foreach (var x in vw)
+            {
+                x.Name = _localizer.GetString(x.Name);
+                x.Description = _localizer.GetString(x.Description);
+                x.UrlName = _localizer.GetString(x.UrlName);
+
+                foreach (var x2 in x.Services_Details)
+                {
+                    x2.Name = _localizer.GetString(x2.Name);
+                }
+            }
             ViewBag.services = vw;       
             ViewBag.idiom = Request.Cookies["Idiom"] == null ? "English" : Request.Cookies["Idiom"];        
             return View();

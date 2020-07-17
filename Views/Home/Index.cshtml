@@ -8,6 +8,7 @@
 @{
     ViewData["Title"] = "Home Page";
     var i = 0;
+    string booknow = Localizer.GetString("Book now");
 }
 
 <div class="navbar3 header py-2 navbar-custom" style="background:#fff;">
@@ -170,15 +171,15 @@
                                         <img class="img-fluid" src="~/imageServices/@row.Photo" alt="alternative">
                                     </div>
                                     <div class="card-body">
-                                        <h3 class="card-title">@Localizer[row.Name]</h3>
-                                        <p style="white-space: pre-line;color:black">@Localizer[row.Description]</p>
+                                        <h3 class="card-title">@row.Name</h3>
+                                        <p style="white-space: pre-line;color:black">@row.Description</p>
                                         <ul class="list-unstyled li-space-lg" style="text-align:left">
                                             @foreach (var sd in row.Services_Details)
                                             {
                                                 i++;                                             
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">@Localizer[sd.Name]</div>
+                                                <div class="media-body">@sd.Name</div>
                                             </li>
                                                     if (i == 5)
                                                     {
@@ -198,11 +199,11 @@
                                 <div class="button-container">
                                     @if (row.Id != 2060)
                                     {
-                                        @Html.ActionLink("Book now", "PayServices", "Home", new { id = row.Id }, new { target = "_blank", @class = "btn-solid-reg page-scroll" })
+                                        @Html.ActionLink(booknow, "PayServices", "Home", new { id = row.Id }, new { target = "_blank", @class = "btn-solid-reg page-scroll" })
                                     }
                                     else
                                     {
-                                        <a class="btn-solid-reg page-scroll" target="_blank" href="/ServicesPage/CreditRepairIndex">@Localizer[row.UrlName]</a>
+                                        <a class="btn-solid-reg page-scroll" target="_blank" href="/ServicesPage/CreditRepairIndex">@row.UrlName</a>
                                     }
 
 
@@ -322,7 +323,7 @@
                                         <div class="testimonial-text">
                                             Milka is awesome to work with. She is very informative and helpful. Anytime we needed her to answer questions she's always there to help with whatever we need.
                                         </div>
-                                        <div class="testimonial-author">La Shawn Mojica</div>
+                                        <div class="testimonial-author">La shaum</div>
                                     </div>
                                 </div>
                             </div>
@@ -343,6 +344,50 @@
                                             Recomendado 💯 buen servicio comprensión con el cliente seguridad en tus documentos excelente trabajo si necesitas ayuda reparación de crédito income tax notary public traducciones preparación de planilla de inmigración seguridad en servicio garantizado.
                                         </div>
                                         <div class="testimonial-author">Rubis Vg</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-11.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Excellent customer service and very professional. I highly recommend!!
+                                        </div>
+                                        <div class="testimonial-author">Angelon Nelson</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-12.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Me Gustó su Servicio, Me Gusto como me Atendieron, se los recomiendo son muy amables!
+                                        </div>
+                                        <div class="testimonial-author">Jorge Guinaque</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-13.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Muy profesionales, me encantó trabajar con ustedes, definitivamente seguimos trabajando juntos. Gracias!!
+                                        </div>
+                                        <div class="testimonial-author">Genesis Principio Astacio</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-14.png" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Excelente servicio, profesionales de primera, amables. Personal calificado.. Gracias amigos de CISEP MULTI-SERVICE
+                                        </div>
+                                        <div class="testimonial-author">Marlon Sorto</div>
                                     </div>
                                 </div>
                             </div>

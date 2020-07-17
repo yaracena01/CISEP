@@ -35,7 +35,7 @@
         } else {
             return true;
         }
-    }, 'Please select one service.');
+    }, 'Please select one service');
     var form = $("#signup-form");
     form.validate({
         errorPlacement: function errorPlacement(error, element) {
@@ -135,8 +135,7 @@
         onStepChanging: function (event, currentIndex, newIndex)
         {
             var form2 = document.getElementById("signup-form");
-            var data = toJSONString(form2), obj = jQuery.parseJSON(data), list_services = [], html = "";
-            var amounts = 0;
+            var data = toJSONString(form2), obj = jQuery.parseJSON(data);
             $('#fullname-val').text(obj.First_name + ' ' + obj.Last_name);
             $('#email-val').text(obj.Email);
             $('#address-val').text(obj.Address);
@@ -145,18 +144,8 @@
             $('#zip-val').text(obj.Zip);
             $('#phone-val').text(obj.Phone);
             $('#pay-val').text(getTypePay(obj.CreditCardNumber));
-            $(".checkServices").each(function (index, element) {
-                $me = $(this);
-                if ($me.is(':checked')) {
-                    list_services.push({ name: $me.attr("name"), value: $me.val() });
-                }
-            });
-            for (var item of list_services) {
-                html += "<tr><th>" + item.name + "</th><td>" + item.value + "$</td></tr>";
-                amounts +=  parseFloat(item.value);
-            }
-            html += "<tr class='tb-total'><th>Total</th><td>" + amounts + "$</td></tr>";
-            $("#tb-services").html(html);
+            
+           
            
             form.validate().settings.ignore = ":disabled,:hidden";
             return form.valid();
