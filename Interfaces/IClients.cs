@@ -6,12 +6,10 @@ using cisep.Models;
 
 namespace cisep.Interfaces
 {
-    interface IClients
+    public interface IClients
     {
 
         List<Clients> GetAll();
-        List<Clients> GetAllCreditServices();
-        Services GetById(int? id);
         void Insert(Clients clients);
         void Update(Clients clients);
         void Delete(Clients clients);

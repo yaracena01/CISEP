@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNetCore.Localization
-@using Microsoft.AspNetCore.Mvc.Localization
+﻿@using Microsoft.AspNetCore.Mvc.Localization
 
 
 @inject IViewLocalizer Localizer
@@ -9,9 +8,8 @@
 @{
     ViewData["Title"] = "Home Page";
     var i = 0;
-
+    string booknow = Localizer.GetString("Book now");
 }
-
 
 <div class="navbar3 header py-2 navbar-custom" style="background:#fff;">
     <div class="container">
@@ -39,7 +37,7 @@
         </div>
     </div>
 </div>
-<div class="navbar2 header py-2 navbar-custom" style="background:#E1E4ED;">
+<div class="navbar2 header py-2 navbar-custom" style="background:#fff;">
     <div class="container">
         <div class="row">
             <div class="col-md-3.5">
@@ -115,13 +113,9 @@
             <li class="nav-item">
                 <a class="nav-link page-scroll" asp-controller="ServicesPage" asp-action="CreditRepairIndex">@Localizer["Credit"]</a>
             </li>
+
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle page-scroll" href="#intro" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["About"]</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">@Localizer["Terms Conditions"]</span></a>
-                    <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">@Localizer["Privacity Polity"]</span></a>
-                </div>
+                <a class="nav-link page-scroll" href="#intro">@Localizer["About"]</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="#contact">@Localizer["Contact"]</a>
@@ -177,12 +171,12 @@
                                         <img class="img-fluid" src="~/imageServices/@row.Photo" alt="alternative">
                                     </div>
                                     <div class="card-body">
-                                        <h3 class="card-title">@Localizer[row.Name]</h3>
-                                        <p style="white-space: pre-line;color:black">@Localizer[row.Description]</p>
+                                        <h3 class="card-title">@row.Name</h3>
+                                        <p style="white-space: pre-line;color:black">@row.Description</p>
                                         <ul class="list-unstyled li-space-lg" style="text-align:left">
                                             @foreach (var sd in row.Services_Details)
-                                                {
-                                                    i++;
+                                            {
+                                                i++;                                             
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
                                                 <div class="media-body">@sd.Name</div>
@@ -194,7 +188,7 @@
                                                     }
                                                 }
                                         </ul>
-                                        <p>
+                                        <p>           
                                             <a style="font-size: 12px;font-weight: bold;" class="popup-with-move-anim" id="model" onclick='getValues(@Json.Serialize(row));' href="#project-1">
                                                 <div class="element-item-overlay"><span>@Localizer["More Information"]</span></div>
                                             </a>
@@ -202,10 +196,18 @@
                                     </div>
                                     @if (row.Url != "" && row.Url != null)
                                      {
-                                        <div class="button-container">
-                                        @Html.ActionLink("Book now", "PayServices", "Home",new {id = row.Id }, new { target = "_blank" })
-                                        @*<a class="btn-solid-reg page-scroll" target="_blank" href="@row.Url">@Localizer[row.UrlName]</a>*@
-                                        </div>
+                                <div class="button-container">
+                                    @if (row.Id != 2060)
+                                    {
+                                        @Html.ActionLink(booknow, "PayServices", "Home", new { id = row.Id }, new { target = "_blank", @class = "btn-solid-reg page-scroll" })
+                                    }
+                                    else
+                                    {
+                                        <a class="btn-solid-reg page-scroll" target="_blank" href="/ServicesPage/CreditRepairIndex">@row.UrlName</a>
+                                    }
+
+
+                                </div>
                                      }
                                 </div>
                             </div>
@@ -321,7 +323,7 @@
                                         <div class="testimonial-text">
                                             Milka is awesome to work with. She is very informative and helpful. Anytime we needed her to answer questions she's always there to help with whatever we need.
                                         </div>
-                                        <div class="testimonial-author">La Shawn Mojica</div>
+                                        <div class="testimonial-author">La shaum</div>
                                     </div>
                                 </div>
                             </div>
@@ -342,6 +344,50 @@
                                             Recomendado 💯 buen servicio comprensión con el cliente seguridad en tus documentos excelente trabajo si necesitas ayuda reparación de crédito income tax notary public traducciones preparación de planilla de inmigración seguridad en servicio garantizado.
                                         </div>
                                         <div class="testimonial-author">Rubis Vg</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-11.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Excellent customer service and very professional. I highly recommend!!
+                                        </div>
+                                        <div class="testimonial-author">Angelon Nelson</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-12.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Me Gustó su Servicio, Me Gusto como me Atendieron, se los recomiendo son muy amables!
+                                        </div>
+                                        <div class="testimonial-author">Jorge Guinaque</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-13.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Muy profesionales, me encantó trabajar con ustedes, definitivamente seguimos trabajando juntos. Gracias!!
+                                        </div>
+                                        <div class="testimonial-author">Genesis Principio Astacio</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="~/images/testimonial-14.png" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">
+                                            Excelente servicio, profesionales de primera, amables. Personal calificado.. Gracias amigos de CISEP MULTI-SERVICE
+                                        </div>
+                                        <div class="testimonial-author">Marlon Sorto</div>
                                     </div>
                                 </div>
                             </div>
@@ -441,20 +487,20 @@
         <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
         <div class="col-lg-12 cards-2" style="padding-top:0px">
             <img class="img-fluid imgs" src="" alt="alternative">
-            <h3 style="text-align:left;" class="tls">Market Domination</h3>
+            <h3 style="text-align:left;" class="tls"></h3>
             <hr class="line-heading">
             <p class="prs" style="white-space: pre-line;"></p>
             <ul class="list-unstyled li-space-lg ds">
                 <li class="media">
                     <i class="fas fa-square"></i>
-                    <div class="media-body">Maintaining the leader status</div>
+                    <div class="media-body"></div>
                 </li>
                 <li class="media">
                     <i class="fas fa-square"></i>
-                    <div class="media-body">Acquisitions the right way</div>
+                    <div class="media-body"></div>
                 </li>
             </ul>
-            <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+            <a class="btn-outline-reg mfp-close as-button" href="#services">@Localizer["BACK"]</a>
         </div>
     </div>
 </div>
@@ -607,11 +653,13 @@
                     });
 
         });
+        $.localization = true
         function getValues(model) {
             $('#project-1 .imgs').attr('src', 'imageServices/' + model.photo);
             $('#project-1 .tls').html(model.name);
             $('#project-1 .prs').html(model.description);
             var detailServices = "";
+            
             for (var s of model.services_Details) {
                 detailServices += "<li class='media'><i class='fas fa-square'></i><div class='media-body'>" + s.name + "</div></li >"
             }

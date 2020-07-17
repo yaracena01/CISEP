@@ -21,6 +21,7 @@ using Twilio.Rest.Api.V2010.Account;
 using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace cisep.Controllers
 {
@@ -45,7 +46,19 @@ namespace cisep.Controllers
         public async Task<IActionResult> Index()
         {
             var model = _unitOfWork.Services.GetAll();
+
             var vw = _mapper.Map<List<ServicesViewModel>>(model);
+            foreach (var x in vw)
+            {
+                x.Name = _localizer.GetString(x.Name);
+                x.Description = _localizer.GetString(x.Description);
+                x.UrlName = _localizer.GetString(x.UrlName);
+
+                foreach (var x2 in x.Services_Details)
+                {
+                    x2.Name = _localizer.GetString(x2.Name);
+                }
+            }
             ViewBag.services = vw;       
             ViewBag.idiom = Request.Cookies["Idiom"] == null ? "English" : Request.Cookies["Idiom"];        
             return View();
@@ -224,8 +237,44 @@ namespace cisep.Controllers
 
         public ActionResult PayServices(int id)
         {
+            var folderDetailsStates = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\{"jsonFiles\\states_titlecase.json"}");
+            var folderDetailsMonths = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\{"jsonFiles\\Months.json"}");
+            var JSONStates = System.IO.File.ReadAllText(folderDetailsStates);
+            var JSONMonths = System.IO.File.ReadAllText(folderDetailsMonths);
+            ViewBag.state =  Newtonsoft.Json.JsonConvert.DeserializeObject<States>(JSONStates);
+            ViewBag.month = Newtonsoft.Json.JsonConvert.DeserializeObject<Months>(JSONMonths);
             ViewBag.service = _unitOfWork.Services.GetById(id);
             return View();
+        }
+
+        public ActionResult Login(int id)
+        {
+           
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        public ActionResult AddClient(Clients client)
+        {
+            _unitOfWork.Clients.Insert(client);
+            _unitOfWork.Save();
+            return Json(new { success = true, clientName = client.First_name + " " + client.Last_name });
+        }
+
+        public ActionResult flexPay(string code)
+        {
+            try
+            {
+                var flex_Pay = _unitOfWork.Flex_Pay.GetById(code);
+                _unitOfWork.Flex_Pay.Delete(flex_Pay);
+                _unitOfWork.Save();
+                return Json(new { data = flex_Pay.Amount, success=true, message= "You can now make your flexible payment." });
+            }
+            catch (Exception)
+            {
+                return Json(new { success = false, message = "You can now make your flexible payment." });
+            }
+            
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

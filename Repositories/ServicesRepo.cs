@@ -39,7 +39,8 @@ namespace cisep.Repositories
 
         public Services GetById(int? id)
         {
-            return _context.Services.FirstOrDefault(x => x.Id == id);
+            return _context.Services.Include(s => s.Services_Details).FirstOrDefault(x => x.Id == id);
+          
         }
 
         public void Insert(Services services)

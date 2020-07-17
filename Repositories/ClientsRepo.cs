@@ -10,6 +10,10 @@ namespace cisep.Repositories
     public class ClientsRepo : IClients
     {
         private readonly cisepDBContext _context;
+        public ClientsRepo(cisepDBContext context)
+        {
+            _context = context;
+        }
         public void Delete(Clients clients)
         {
             throw new NotImplementedException();
@@ -20,19 +24,9 @@ namespace cisep.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Clients> GetAllCreditServices()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Services GetById(int? id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Insert(Clients clients)
         {
-            throw new NotImplementedException();
+            _context.Clients.Add(clients);
         }
 
         public void Update(Clients clients)

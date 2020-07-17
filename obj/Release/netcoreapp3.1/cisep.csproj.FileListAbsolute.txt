@@ -460,7 +460,6 @@ C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\Razor\Views\Home\EmailTem
 C:\cicep_project\cisep\cisep\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\cicep_project\cisep\cisep\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\cicep_project\cisep\cisep\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\Razor\Views\ServicesPage\PushServices.cshtml.g.cs
 C:\cicep_project\cisep\cisep\bin\Release\netcoreapp3.1\es\cisep.resources.dll
 C:\cicep_project\cisep\cisep\bin\Release\netcoreapp3.1\LazZiya.ExpressLocalization.dll
 C:\cicep_project\cisep\cisep\bin\Release\netcoreapp3.1\LazZiya.TagHelpers.dll
@@ -470,3 +469,5 @@ C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\cisep.Resources.Views.Ser
 C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\cisep.csproj.GenerateResource.cache
 C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\es\cisep.resources.dll
 C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\cisep.Resources.Views.ServicesPage.PushServices.es.resources
+C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\cisep.Resources.Views.Home.PayServices.es.resources
+C:\cicep_project\cisep\cisep\obj\Release\netcoreapp3.1\Razor\Views\Home\PayServices.cshtml.g.cs
