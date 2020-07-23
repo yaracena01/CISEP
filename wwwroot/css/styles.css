@@ -853,6 +853,15 @@ input[type='checkbox'] {
 /*********************/
 /*     05. Intro     */
 /*********************/
+
+.wsServices a {
+	font-size: 4rem;
+	color: #190D82 !important;
+}
+.wsServices a, h5 {
+	text-align:center;
+}
+
 .basic-1 .intro-header {
 	background: #265980;
 	padding-bottom: 3px;

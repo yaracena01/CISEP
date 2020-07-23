@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\cicep_project\\cisep\\cisep\\cisep.csproj": {}
+    "C:\\CISEP2\\cisep\\cisep.csproj": {}
   },
   "projects": {
-    "C:\\cicep_project\\cisep\\cisep\\cisep.csproj": {
+    "C:\\CISEP2\\cisep\\cisep.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\cicep_project\\cisep\\cisep\\cisep.csproj",
+        "projectUniqueName": "C:\\CISEP2\\cisep\\cisep.csproj",
         "projectName": "cisep",
-        "projectPath": "C:\\cicep_project\\cisep\\cisep\\cisep.csproj",
+        "projectPath": "C:\\CISEP2\\cisep\\cisep.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\cicep_project\\cisep\\cisep\\obj\\",
+        "outputPath": "C:\\CISEP2\\cisep\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

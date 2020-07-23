@@ -34,84 +34,12 @@ namespace cisep.Controllers
             return View();
         }
 
-        public ActionResult PushServices()
+        public ActionResult WebSiteIndex()
         {
+            var model = _unitOfWork.Services.GetAllCreditServices();
+            var vw = _mapper.Map<List<ServicesViewModel>>(model);
+            ViewBag.services = vw;
             return View();
-        }
-
-        // GET: ServicesPage/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: ServicesPage/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ServicesPage/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ServicesPage/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ServicesPage/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ServicesPage/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ServicesPage/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

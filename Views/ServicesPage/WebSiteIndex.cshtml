@@ -67,64 +67,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="text-container">
+                <div class="text-container wsServices">
                     <div class="section-title">@Localizer["Credit Repair"]</div>
-                    <h4 style="text-align:center;">@Localizer["YOU NEED CREDIT REPAIR BACKED BY THE LAWS THAT PROTECT YOU"]</h4>
-                    <p style="text-align:center;border-bottom: 1px solid #37A;padding-bottom: 15px">@Localizer["Creditors know that most consumers don’t know the credit laws that protect them. This is where we come in. Let us fight for you. We focus on the credit laws in place to ensure that your creditors are adhering to the FCRA (Fair Credit Reporting Act) and the FDCPA (Fair Debt Collection Practices Act). Our Clients rest easy knowing that they are paying for results and not broken promises"].</p>
-                    <div class="row cards-4 cards-3">
-                        <div class="col-md-12">
-                            <div class="slider-container">
-                                <div class="swiper-container card-slider">
-                                    <div class="swiper-wrapper">
-                                        <!-- Slide -->
-                                        @foreach (var row in ViewBag.services)
-                                        {
-                                        <div class="swiper-slide">
-                                            <!-- Card -->
-                                            <div class="card">
-                                                <div class="card-image element-item">
-                                                    <img class="img-fluid" src="~/imageServices/@row.Photo" alt="alternative">
-                                                </div>
-                                                <div class="card-body">
-                                                    <h3 class="card-title">@Localizer[row.Name]</h3>
-                                                    <p style="white-space: pre-line;color:black">@Localizer[row.Description]</p>
-                                                    <ul class="list-unstyled li-space-lg" style="text-align:left">
-                                                        @foreach (var sd in row.Services_Details)
-                                                            {
-                                                        <li class="media">
-                                                            <i class="fas fa-square"></i>
-                                                            <div class="media-body">@Localizer[sd.Name]</div>
-                                                        </li>
-
-                                                            }
-                                                    </ul>
-                                                   
-                                                </div>
-                                                @if (row.Url != "" && row.Url != null)
-                                                    {
-                                                <div class="button-container">
-                                                    <a class="btn-solid-reg page-scroll" target="_blank" href="@row.Url">@Localizer[row.UrlName]</a>
-                                                </div>  <!-- end of button-container -->
-
-                                                    }
-                                            </div>
-                                            <!-- end of card -->
-                                        </div>
-                                        }
-
-                                    </div>
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
+                    @*<div class="row">
+                        <div class="col-lg-3">
+                            <div class="card-header">
+                                <a><i class="fa fa-desktop" aria-hidden="true"></i></a>
+                                <h5>
+                                    Software development
+                                </h5>
+                                <div class="">
+                                    <div class="testimonial-text">Exelente servicio muy profecionales,amables y gran precio no me arrepiento para nada de haber echo mis taxes con ellos que Dios los bendiga y gracias🙏🏼</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div> <!-- end of text-container-->
-            </div> <!-- end of col-->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of other-->
-<!-- end of credit -->
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="program" class="basic-1">
     @*<div class="intro-header">
             <div class="container">
@@ -320,7 +282,7 @@
 <!-- end of breadcrumbs -->
 @section scripts {
     <script>
-
+        $('.carousel').carousel()
         var cards = $('#credit .card-body');
         var maxHeight = 0;
 

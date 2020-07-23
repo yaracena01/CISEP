@@ -210,8 +210,8 @@
   <data name="Income Tax" xml:space="preserve">
     <value>Impuesto sobre la renta</value>
   </data>
-  <data name="Initial Audit Fee – $189 Per Person" xml:space="preserve">
-    <value>Tarifa de auditoría inicial: $ 189 por persona</value>
+  <data name="Initial Audit Fee – $150 Per Person" xml:space="preserve">
+    <value>Tarifa de auditoría inicial: $ 150 por persona</value>
   </data>
   <data name="INQUIRES" xml:space="preserve">
     <value>CONSULTAS</value>

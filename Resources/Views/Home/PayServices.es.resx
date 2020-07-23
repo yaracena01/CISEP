@@ -216,6 +216,9 @@
   <data name="Billing Address" xml:space="preserve">
     <value>Dirección de Envio</value>
   </data>
+  <data name="Billing infomation" xml:space="preserve">
+    <value>Información para la facturación</value>
+  </data>
   <data name="Billing Information" xml:space="preserve">
     <value>Datos de facturación</value>
   </data>

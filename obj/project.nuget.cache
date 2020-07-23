@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pvrv7y7A4jW+eWy91DpJlOO+NyjoTaj35FDP/1q4WelTDPbRBVedtEYWpt8b4u0775N7L1lCt3iukw8pTjTKHg==",
+  "dgSpecHash": "uwSxXjv7PcwDfmhz2BnQ819JlGf+/DEeD7msMQDC9oRXlkSt/yr/HefSLAosUw859G+uZuvw1wIVmSgVHtHwBQ==",
   "success": true,
-  "projectFilePath": "C:\\cicep_project\\cisep\\cisep\\cisep.csproj",
+  "projectFilePath": "C:\\CISEP2\\cisep\\cisep.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\closedxml\\0.95.2\\closedxml.0.95.2.nupkg.sha512",
